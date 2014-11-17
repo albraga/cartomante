@@ -9,256 +9,55 @@ function Card(id, name, suit, value, position, individual_meaning, relative_mean
     this.img = img;
 }
 
-var aceClubs = new Card(1, 'ace', 'clubs', 52, '', '', 'Playing_card_club_A.svg');
-var kingClubs = new Card(2, 'king', 'clubs', 51, '', '', 'Playing_card_club_K.svg');
-/*
-3
-queen
-clubs
-50
-
-4
-jack
-clubs
-49
-
-5
-ten
-clubs
-48
-
-6
-nine
-clubs
-47
-
-7
-eight
-clubs
-46
-
-8
-seven
-clubs
-45
-
-9
-six
-clubs
-44
-
-10
-five
-clubs
-43
-
-11
-four
-clubs
-42
-
-12
-three
-clubs
-41
-
-13
-two
-clubs
-40
-
-14
-ace
-hearts
-39
-
-15
-king
-hearts
-38
-
-16
-queen
-hearts
-37
-
-17
-jack
-hearts
-36
-
-18
-ten
-hearts
-35
-
-19
-nine
-hearts
-34
-
-20
-eight
-hearts
-33
-
-21
-seven
-hearts
-32
-
-22
-six
-hearts
-31
-
-23
-five
-hearts
-30
-
-24
-four
-hearts
-29
-
-25
-three
-hearts
-28
-
-26
-two
-hearts
-27
-
-27
-ace
-Diamonds
-26
-
-28
-king
-Diamonds
-25
-
-29
-queen
-Diamonds
-24
-
-30
-jack
-Diamonds
-23
-
-31
-ten
-Diamonds
-22
-
-32
-nine
-Diamonds
-21
-
-33
-eight
-Diamonds
-20
-
-34
-seven
-Diamonds
-19
-
-35
-six
-Diamonds
-18
-
-36
-five
-Diamonds
-17
-
-37
-four
-Diamonds
-16
-
-38
-three
-Diamonds
-15
-
-39
-two
-Diamonds
-14
-
-40
-ace
-Spades
-13
-
-41
-king
-Spades
-12
-
-42
-queen
-Spades
-11
-
-43
-jack
-Spades
-10
-
-44
-ten
-Spades
-9
-
-45
-nine
-Spades
-8
-
-46
-eight
-Spades
-7
-
-47
-seven
-Spades
-6
-
-48
-six
-Spades
-5
-
-49
-five
-Spades
-4
-
-50
-four
-Spades
-3
-
-51
-three
-Spades
-2
-
-52
-two
-Spades
-1
-*/
+var aceClubs = new Card(1, 'ace', 'Clubs', 52, '', '', 'Playing_card_club_A.svg');
+var kingClubs = new Card(2, 'king', 'Clubs', 51, '', '', 'Playing_card_club_K.svg');
+var queenClubs = new Card(3, 'queen', 'Clubs', 50, '', '','');
+var jackClubs = new Card(4, 'jack', 'Clubs', 49, '', '', '');
+var tenClubs = new Card(5, 'ten', 'Clubs', 48, '', '', '');
+var nineClubs = new Card(6, 'nine', 'Clubs', 47, '', '', '');
+var eightClubs = new Card(7, 'eight', 'clubs', 46, '', '', '');
+var sevenClubs = new Card(8, 'seven', 'Clubs', 45, '', '','');
+var sixClubs = new Card(9, 'six', 'Clubs', 44, '', '','');
+var fiveClubs = new Card(10, 'five', 'Clubs', 43, '', '','');
+var fourClubs = new Card(11, 'four', 'Clubs', 42, '', '','');
+var threeClubs = new Card(12, 'three', 'Clubs', 41, '', '','');
+var twoClubs = new Card(13, 'two', 'Clubs', 40, '', '','');
+var aceHearts = new Card(14, 'ace', 'Hearts', 39, '', '','');
+var kingHearts = new Card(15, 'king', 'Hearts', 38, '', '','');
+var queenHearts = new Card(16, 'queen', 'Hearts', 37, '', '','');
+var jackHearts = new Card(17, 'jack', 'Hearts', 36, '', '','');
+var tenHearts = new Card(18, 'ten', 'Hearts', 35, '', '','');
+var nineHearts = new Card(19, 'nine', 'Hearts', 34, '', '','');
+var eightHearts = new Card(20, 'eight', 'Hearts', 33, '', '','');
+var sevenHearts = new Card(21, 'seven', 'Hearts', 32, '', '','');
+var sixHearts = new Card(22, 'six', 'Hearts', 31, '', '','');
+var fiveHearts = new Card(23, 'five', 'Hearts', 30, '', '','');
+var fourHearts = new Card(24, 'four', 'Hearts', 29, '', '','');
+var threeHearts = new Card(25, 'three', 'Hearts', 28, '', '','');
+var twoHearts = new Card(26, 'two', 'Hearts', 27, '', '','');
+var aceDiamonds = new Card(27, 'ace', 'Diamonds', 26, '', '','');
+var kingDiamonds = new Card(28, 'king', 'Diamonds', 25, '', '','');
+var queenDiamonds = new Card(29, 'queen', 'Diamonds', 24, '', '','');
+var jackDiamonds = new Card(30, 'jack', 'Diamonds', 23, '', '','');
+var tenDiamonds = new Card(31, 'ten', 'Diamonds', 22, '', '','');
+var nineDiamonds = new Card(32, 'nine', 'Diamonds', 21, '', '','');
+var eightDiamonds = new Card(33, 'eight', 'Diamonds', 20, '', '','');
+var sevenDiamonds = new Card(34, 'seven', 'Diamonds', 19, '', '','');
+var sixDiamonds = new Card(35, 'six', 'Diamonds', 18, '', '','');
+var fiveDiamonds = new Card(36, 'five', 'Diamonds', 17, '', '','');
+var fourDiamonds = new Card(37, 'four', 'Diamonds', 16, '', '','');
+var threeDiamonds = new Card(38, 'three', 'Diamonds', 15, '', '','');
+var twoDiamonds = new Card(39, 'two', 'Diamonds', 14, '', '','');
+var aceSpades = new Card(40, 'ace', 'Spades', 13, '', '','');
+var kingSpades = new Card(41, 'king', 'Spades', 12, '', '','');
+var queenSpades = new Card(42, 'queen', 'Spades', 11, '', '','');
+var jackSpades = new Card(43, 'jack', 'Spades', 10, '', '','');
+var tenSpades = new Card(44, 'ten', 'Spades', 9, '', '','');
+var nineSpades = new Card(45, 'nine', 'Spades', 8, '', '','');
+var eightSpades = new Card(46, 'eight', 'Spades', 7, '', '','');
+var sevenSpades = new Card(47, 'seven', 'Spades', 6, '', '','');
+var sixSpades = new Card(48, 'six', 'Spades', 5, '', '','');
+var fiveSpades = new Card(49, 'five', 'Spades', 4, '', '','');
+var fourSpades = new Card(50, 'four', 'Spades', 3, '', '','');
+var threeSpades = new Card(51, 'three', 'Spades', 2, '', '','');
+var twoSpades = new Card(52, 'two', 'Spades', 1, '', '','');
