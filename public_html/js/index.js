@@ -126,7 +126,7 @@ var Cartomancer = (function () {
         }
         deck.reverse();
     };
-       
+
     var cut = function () {
         var cut1 = deck.slice(0, 17);
         var cut2 = deck.slice(17, 34);
@@ -134,22 +134,23 @@ var Cartomancer = (function () {
         deck.length = 0;
         deck = cut2.concat(cut3, cut1);
     };
-    
-    var layThemOut = function() {
+
+    var layThemOut = function () {
         var table = new Array(6);
-        for (var x = 0; x < 6; x++) {
+        for (var x = 0; x < 5; x++) {
             table[x] = new Array(9);
         }
+        table[5] = new Array(7);
         var count = 0;
         for (var i = 0; i < 6; i++) {
-            for (var j = 0; j < 9; j++) {
+            for (var j = 0; j < table[i].length; j++) {
                 table[i][j] = deck[count];
                 count++;
             }
         }
         return table;
     };
-    
+
     return {
         EN_US: 0,
         PT_BR: 1,
@@ -164,5 +165,12 @@ var Cartomancer = (function () {
 Cartomancer.LANG = Cartomancer.PT_BR;
 Cartomancer.shuffle();
 Cartomancer.cut();
-Cartomancer.layThemOut();
-alert(Cartomancer.layThemOut()[5][6].individual_meaning[Cartomancer.LANG]);
+var table = Cartomancer.layThemOut();
+
+for (var i = 0; i < 6; i++) {
+    for (var j = 0; j < table[i].length; j++) {
+        var img = document.createElement("img");
+        img.src = table[i][j].img;
+        document.body.appendChild(img);
+    }
+}
