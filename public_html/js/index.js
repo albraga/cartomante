@@ -135,15 +135,28 @@ var Cartomancer = (function () {
         deck = cut2.concat(cut3, cut1);
     };
     
+    var layThemOut = function() {
+        var table = new Array(6);
+        for (var x = 0; x < 6; x++) {
+            table[x] = new Array(9);
+        }
+        var count = 0;
+        for (var i = 0; i < 6; i++) {
+            for (var j = 0; j < 9; j++) {
+                table[i][j] = deck[count];
+                count++;
+            }
+        }
+        return table;
+    };
+    
     return {
         EN_US: 0,
         PT_BR: 1,
         LANG: -1,
         shuffle: shuffle,
         cut: cut,
-        getDeck: function() {
-            return deck;
-        }
+        layThemOut: layThemOut
     };
 
 }());
@@ -151,5 +164,5 @@ var Cartomancer = (function () {
 Cartomancer.LANG = Cartomancer.PT_BR;
 Cartomancer.shuffle();
 Cartomancer.cut();
-
-alert(Cartomancer.getDeck()[51].individual_meaning[Cartomancer.LANG]);
+Cartomancer.layThemOut();
+alert(Cartomancer.layThemOut()[5][6].individual_meaning[Cartomancer.LANG]);
