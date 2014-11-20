@@ -148,7 +148,29 @@ var Cartomancer = (function () {
                 count++;
             }
         }
+        writeWords(table);
         return table;
+    };
+
+    var writeWords = function (table) {
+        var words = new Array(6);
+        for (var i = 0; i < words.length; i++) {
+            words[i] = "";
+        }
+        for (var row = 0; row < 6; row++) {
+            for (var column = 0; column < table[row].length; column++) {
+                var name_tmp = table[row][column].name;
+                var words_temp = words[row];
+                if (name_tmp === words_temp.substr(words_temp.length - name_tmp.length)) {
+                    words[row] += table[row][column].name;
+                } else {
+                    words[row] += " " + table[row][column].name;
+                }
+            }
+        }
+        for (var i = 0; i < words.length; i++) {
+            alert(words[i]);
+        }
     };
 
     return {
@@ -167,10 +189,11 @@ Cartomancer.shuffle();
 Cartomancer.cut();
 var table = Cartomancer.layThemOut();
 
-for (var i = 0; i < 6; i++) {
-    for (var j = 0; j < table[i].length; j++) {
-        var img = document.createElement("img");
-        img.src = table[i][j].img;
-        document.body.appendChild(img);
-    }
-}
+
+//for (var i = 0; i < 6; i++) {
+//    for (var j = 0; j < table[i].length; j++) {
+//        var img = document.createElement("img");
+//        img.src = table[i][j].img;
+//        document.body.appendChild(img);
+//    }
+//}
