@@ -1,5 +1,5 @@
 var Cartomancer = (function () {
-    
+
     var LANG = -1;
 
     function Card(id, name, suit, value, individual_meaning, img) {
@@ -10,7 +10,7 @@ var Cartomancer = (function () {
         this.individual_meaning = individual_meaning;
         this.img = img;
     }
-    
+
     function Word(token, relative_meaning) {
         this.token = token;
         this.relative_meaning = relative_meaning;
@@ -68,8 +68,7 @@ var Cartomancer = (function () {
     var fourSpades = new Card(50, 'four', 'Spades', -1, ['Sickness.', 'Doença.'], 'img/Playing_card_spade_4.svg');
     var threeSpades = new Card(51, 'three', 'Spades', 0, ['A journey.', 'Uma viagem.'], 'img/Playing_card_spade_3.svg');
     var twoSpades = new Card(52, 'two', 'Spades', -1, ['A removal.', 'Um afastamento.'], 'img/Playing_card_spade_2.svg');
-    var ace4 = new Word('aceaceaceace', ['Announces danger, failure in business and sometimes imprisonment.','Anuncia perigo, fracasso nos negócios e, por vezes, a prisão.']);
-    
+
     var deck = [
         aceClubs,
         kingClubs,
@@ -125,6 +124,30 @@ var Cartomancer = (function () {
         twoSpades
     ];
 
+    var ace4 = new Word('aceaceaceace', ['Announces danger, failure in business and sometimes imprisonment.', 'Anuncia perigo, fracasso nos negócios e, por vezes, a prisão.']);
+    var ace3 = new Word('aceaceace', ['Signify good tidings.', 'Significa boas notícias.']);
+    var ace2 = new Word('aceace', ['A plot.', 'Uma conspiração.']);
+    var king4 = new Word('kingkingkingking', ['A consultation on important business, the result of which will be highly satisfactory.', 'Uma consulta sobre assuntos importantes, cujo resultado será altamente satisfatório.']);
+    var king2 = new Word('kingking', ['A partnership in business. Sometimes this only denotes friendly projects.', 'Uma parceria em negócios. Às vezes isto só denota projetos amigáveis.']);
+    var queen4 = new Word('queenqueenqueenqueen', ['Company, society.', 'Companhia, sociedade.']);
+    var queen3 = new Word('queenqueenqueen', ['Friendly calls.', 'Chamadas amigáveis.']);
+    var queen2 = new Word('queenqueen', ['A meeting between friends.', 'Um encontro entre amigos.']);
+    var jack4 = new Word('jackjackjackjack', ['A noisy party, mostly young people.', 'Uma festa barulhenta, principalmente jovens.']);
+    var jack3 = new Word('jackjackjack', ['False friends.', 'Falsos amigos.']);
+    var jack2 = new Word('jackjack', ['Evil intentions.', 'Más intenções.']);
+    var ten4 = new Word('tentententen', ['Great success in projected enterprises.', 'Grande sucesso em empreendimentos planejados.']);
+    var ten3 = new Word('tententen', ['Improper conduct.', 'Conduta imprópria.']);
+    var ten2 = new Word('tenten', ['Change of trade or profession.', 'Mudança de ofício ou profissão.']);
+    var nine4 = new Word('ninenineninenine', ['A great surprise.', 'Uma grande surpresa.']);
+    var nine3 = new Word('nineninenine', ['Joy, fortune, health.', 'Alegria, fortuna, saúde.']);
+    var nine2 = new Word('ninenine', ['A little gain.', 'Um pequeno ganho.']);
+    var eight4 = new Word('eighteighteighteight', ['A short journey.', 'Uma curta viagem.']);
+    var eight3 = new Word('eighteighteight', ['Thoughts of marriage.', 'Pensamentos de casamento.']);
+    var eight2 = new Word('eighteight', ['A brief love-dream.', 'Um breve sonho de amor.']);
+    var seven4 = new Word('sevensevensevenseven', ['Intrigues among servants or low people, threats, snares and disputes.', 'Intrigas entre funcionários ou pessoas de baixo escalão, ameaças, armadilhas e disputas.']);
+    var seven3 = new Word('sevensevenseven', ['Sickness, premature old age.', 'Doença, velhice prematura.']);
+    var seven2 = new Word('sevenseven', ['Levity.', 'Leviandade.']);
+
     var shuffle = function () {
         for (var i = deck.length - 1; i > 0; i--) {
             var j = Math.floor(Math.random() * (i + 1));
@@ -178,8 +201,8 @@ var Cartomancer = (function () {
         }
         readWords(words);
     };
-    
-    var readWords = function(words) {
+
+    var readWords = function (words) {
         var relative_meanings = [6];
         for (var x = 0; x < words.length; x++) {
             relative_meanings[x] = "";
@@ -187,19 +210,85 @@ var Cartomancer = (function () {
         for (var i = 0; i < words.length; i++) {
             var wordz = words[i].split(" ");
             for (var j = 0; j < wordz.length; j++) {
-                switch(wordz[j]) {
-                    case ace4.token : 
+                switch (wordz[j]) {
+                    case ace4.token :
                         relative_meanings[i] += " " + ace4.relative_meaning[LANG];
+                        break;
+                    case ace3.token :
+                        relative_meanings[i] += " " + ace3.relative_meaning[LANG];
+                        break;
+                    case ace2.token :
+                        relative_meanings[i] += " " + ace2.relative_meaning[LANG];
+                        break;
+                    case king4.token :
+                        relative_meanings[i] += " " + king4.relative_meaning[LANG];
+                        break;
+                    case king2.token :
+                        relative_meanings[i] += " " + king2.relative_meaning[LANG];
+                        break;
+                    case queen4.token :
+                        relative_meanings[i] += " " + queen4.relative_meaning[LANG];
+                        break;
+                    case queen3.token :
+                        relative_meanings[i] += " " + queen3.relative_meaning[LANG];
+                        break;
+                    case queen2.token :
+                        relative_meanings[i] += " " + queen2.relative_meaning[LANG];
+                        break;
+                    case jack4.token :
+                        relative_meanings[i] += " " + jack4.relative_meaning[LANG];
+                        break;
+                    case jack3.token :
+                        relative_meanings[i] += " " + jack3.relative_meaning[LANG];
+                        break;
+                    case jack2.token :
+                        relative_meanings[i] += " " + jack2.relative_meaning[LANG];
+                        break;
+                    case ten4.token :
+                        relative_meanings[i] += " " + ten4.relative_meaning[LANG];
+                        break;
+                    case ten3.token :
+                        relative_meanings[i] += " " + ten3.relative_meaning[LANG];
+                        break;
+                    case ten2.token :
+                        relative_meanings[i] += " " + ten2.relative_meaning[LANG];
+                        break;
+                    case nine4.token :
+                        relative_meanings[i] += " " + nine4.relative_meaning[LANG];
+                        break;
+                    case nine3.token :
+                        relative_meanings[i] += " " + nine3.relative_meaning[LANG];
+                        break;
+                    case nine2.token :
+                        relative_meanings[i] += " " + nine2.relative_meaning[LANG];
+                        break;
+                    case eight4.token :
+                        relative_meanings[i] += " " + eight4.relative_meaning[LANG];
+                        break;
+                    case eight3.token :
+                        relative_meanings[i] += " " + eight3.relative_meaning[LANG];
+                        break;
+                    case eight2.token :
+                        relative_meanings[i] += " " + eight2.relative_meaning[LANG];
+                        break;
+                    case seven4.token :
+                        relative_meanings[i] += " " + seven4.relative_meaning[LANG];
+                        break;
+                    case seven3.token :
+                        relative_meanings[i] += " " + seven3.relative_meaning[LANG];
+                        break;
+                    case seven2.token :
+                        relative_meanings[i] += " " + seven2.relative_meaning[LANG];
                         break;
                 }
             }
         }
     };
-    
-    var setLANG = function(lang) {
+
+    var setLANG = function (lang) {
         LANG = lang;
     };
- 
+
 
     return {
         EN_US: 0,
