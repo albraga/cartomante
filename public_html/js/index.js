@@ -1,4 +1,6 @@
 var Cartomancer = (function () {
+    
+    var LANG = -1;
 
     function Card(id, name, suit, value, individual_meaning, img) {
         this.id = id;
@@ -7,6 +9,11 @@ var Cartomancer = (function () {
         this.value = value;
         this.individual_meaning = individual_meaning;
         this.img = img;
+    }
+    
+    function Word(token, relative_meaning) {
+        this.token = token;
+        this.relative_meaning = relative_meaning;
     }
 
     var aceClubs = new Card(1, 'ace', 'Clubs', 1, ['Wealth, happiness and peace of mind.', 'Riqueza, felicidade e paz de espírito.'], 'img/Playing_card_club_A.svg');
@@ -61,7 +68,8 @@ var Cartomancer = (function () {
     var fourSpades = new Card(50, 'four', 'Spades', -1, ['Sickness.', 'Doença.'], 'img/Playing_card_spade_4.svg');
     var threeSpades = new Card(51, 'three', 'Spades', 0, ['A journey.', 'Uma viagem.'], 'img/Playing_card_spade_3.svg');
     var twoSpades = new Card(52, 'two', 'Spades', -1, ['A removal.', 'Um afastamento.'], 'img/Playing_card_spade_2.svg');
-
+    var ace4 = new Word('aceaceaceace', ['Announces danger, failure in business and sometimes imprisonment.','Anuncia perigo, fracasso nos negócios e, por vezes, a prisão.']);
+    
     var deck = [
         aceClubs,
         kingClubs,
@@ -168,15 +176,36 @@ var Cartomancer = (function () {
                 }
             }
         }
+        readWords(words);
+    };
+    
+    var readWords = function(words) {
+        var relative_meanings = [6];
+        for (var x = 0; x < words.length; x++) {
+            relative_meanings[x] = "";
+        }
         for (var i = 0; i < words.length; i++) {
-            alert(words[i]);
+            var wordz = words[i].split(" ");
+            for (var j = 0; j < wordz.length; j++) {
+                switch(wordz[j]) {
+                    case ace4.token : 
+                        relative_meanings[i] += " " + ace4.relative_meaning[LANG];
+                        break;
+                }
+            }
         }
     };
+    
+    var setLANG = function(lang) {
+        LANG = lang;
+    };
+ 
 
     return {
         EN_US: 0,
         PT_BR: 1,
-        LANG: -1,
+        LANG: LANG,
+        setLANG: setLANG,
         shuffle: shuffle,
         cut: cut,
         layThemOut: layThemOut
@@ -184,7 +213,7 @@ var Cartomancer = (function () {
 
 }());
 
-Cartomancer.LANG = Cartomancer.PT_BR;
+Cartomancer.setLANG(Cartomancer.PT_BR);
 Cartomancer.shuffle();
 Cartomancer.cut();
 var table = Cartomancer.layThemOut();
