@@ -1,7 +1,8 @@
 var Cartomancer = (function () {
 
     var LANG = -1;
-
+    var relative_meanings = [6];
+    
     function Card(id, name, suit, value, individual_meaning, img) {
         this.id = id;
         this.name = name;
@@ -203,7 +204,7 @@ var Cartomancer = (function () {
     };
 
     var readWords = function (words) {
-        var relative_meanings = [6];
+        
         for (var x = 0; x < words.length; x++) {
             relative_meanings[x] = "";
         }
@@ -297,7 +298,10 @@ var Cartomancer = (function () {
         setLANG: setLANG,
         shuffle: shuffle,
         cut: cut,
-        layThemOut: layThemOut
+        layThemOut: layThemOut,
+        means: function() {
+            return relative_meanings;
+        }
     };
 
 }());
@@ -306,12 +310,16 @@ Cartomancer.setLANG(Cartomancer.PT_BR);
 Cartomancer.shuffle();
 Cartomancer.cut();
 var table = Cartomancer.layThemOut();
+var means = Cartomancer.means();
 
+for (var i = 0; i < 6; i++) {
+    for (var j = 0; j < table[i].length; j++) {
+        var img = document.createElement("img");
+        img.src = table[i][j].img;
+        document.body.appendChild(img);
+    }
+}
 
-//for (var i = 0; i < 6; i++) {
-//    for (var j = 0; j < table[i].length; j++) {
-//        var img = document.createElement("img");
-//        img.src = table[i][j].img;
-//        document.body.appendChild(img);
-//    }
-//}
+for (var y = 0; y < means.length; y++) {
+                alert(means[y]);
+            }
