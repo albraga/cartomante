@@ -2,7 +2,7 @@ var Cartomancer = (function () {
 
     var LANG = -1;
     var relative_meanings = [6];
-    
+
     function Card(id, name, suit, value, individual_meaning, img) {
         this.id = id;
         this.name = name;
@@ -166,7 +166,7 @@ var Cartomancer = (function () {
         deck.length = 0;
         deck = cut2.concat(cut3, cut1);
     };
-    
+
     var cutOnce = function () {
         var cut1 = deck.slice(0, 26);
         var cut2 = deck.slice(26, deck.length);
@@ -188,7 +188,20 @@ var Cartomancer = (function () {
             }
         }
         writeWords(table);
-        return table;
+
+        var count = 1;
+        for (var i = 0; i < 6; i++) {
+            for (var j = 0; j < table[i].length; j++) {
+                var img = document.createElement("img");
+                img.src = table[i][j].img;
+                img.width = 100;
+                img.height = 125;
+                img.setAttribute('title', table[i][j].individual_meaning[Cartomancer.PT_BR]);
+                var roh = '#roh'.concat(count.toString());
+                document.querySelector(roh).appendChild(img);
+                count++;
+            }
+        }
     };
 
     var writeWords = function (table) {
@@ -211,7 +224,7 @@ var Cartomancer = (function () {
     };
 
     var readWords = function (words) {
-        
+
         for (var x = 0; x < words.length; x++) {
             relative_meanings[x] = "";
         }
@@ -297,17 +310,15 @@ var Cartomancer = (function () {
         LANG = lang;
     };
 
-
     return {
         EN_US: 0,
         PT_BR: 1,
-        LANG: LANG,
         setLANG: setLANG,
         shuffle: shuffle,
         cutOnce: cutOnce,
         cut3times: cut3times,
         layThemOut: layThemOut,
-        means: function() {
+        relative_meanings: function () {
             return relative_meanings;
         }
     };
@@ -317,17 +328,11 @@ var Cartomancer = (function () {
 Cartomancer.setLANG(Cartomancer.PT_BR);
 Cartomancer.shuffle();
 Cartomancer.cut3times();
-var table = Cartomancer.layThemOut();
-var means = Cartomancer.means();
+Cartomancer.layThemOut();
+var means = Cartomancer.relative_meanings();
 
-for (var i = 0; i < 6; i++) {
-    for (var j = 0; j < table[i].length; j++) {
-        var img = document.createElement("img");
-        img.src = table[i][j].img;
-        document.body.appendChild(img);
-    }
-}
+
 
 for (var y = 0; y < means.length; y++) {
-                alert(means[y]);
-            }
+    alert(means[y]);
+}
