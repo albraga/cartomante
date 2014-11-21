@@ -159,12 +159,19 @@ var Cartomancer = (function () {
         deck.reverse();
     };
 
-    var cut = function () {
+    var cut3times = function () {
         var cut1 = deck.slice(0, 17);
         var cut2 = deck.slice(17, 34);
         var cut3 = deck.slice(34, deck.length);
         deck.length = 0;
         deck = cut2.concat(cut3, cut1);
+    };
+    
+    var cutOnce = function () {
+        var cut1 = deck.slice(0, 26);
+        var cut2 = deck.slice(26, deck.length);
+        deck.length = 0;
+        deck = cut1.concat(cut2);
     };
 
     var layThemOut = function () {
@@ -297,7 +304,8 @@ var Cartomancer = (function () {
         LANG: LANG,
         setLANG: setLANG,
         shuffle: shuffle,
-        cut: cut,
+        cutOnce: cutOnce,
+        cut3times: cut3times,
         layThemOut: layThemOut,
         means: function() {
             return relative_meanings;
@@ -308,7 +316,7 @@ var Cartomancer = (function () {
 
 Cartomancer.setLANG(Cartomancer.PT_BR);
 Cartomancer.shuffle();
-Cartomancer.cut();
+Cartomancer.cut3times();
 var table = Cartomancer.layThemOut();
 var means = Cartomancer.means();
 
