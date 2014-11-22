@@ -16,19 +16,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <button type="button" class="btn btn-default" title="shuttle/embaralhar" onclick="">
+                    <button id="btshuffle" type="button" class="btn btn-default" title="shuttle/embaralhar" onclick="Cartomancer.shuffle();">
                         <span class="glyphicon glyphicon-random"></span>
                     </button>
-                    <button type="button" class="btn btn-default" title="cut 3 times/cortar três vezes" onclick="">
+                    <button id="btcut3" type="button" class="btn btn-default" title="cut 3 times/cortar três vezes" onclick="Cartomancer.cut3times();">
                         <span class="glyphicon glyphicon-sort"></span>
                     </button>
-                    <button type="button" class="btn btn-default" title="lay the cards out/espalhar as cartas" onclick="">
+                    <button id="btlayout" type="button" class="btn btn-default" title="lay the cards out/espalhar as cartas" onclick="Cartomancer.layThemOut();">
                         <span class="glyphicon glyphicon-th"></span>
                     </button>
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div id="board" class="container hidden">
             <div class="row bg-warning">
                 <div class="col-md-12 text-center">
                     <button id="btinfo1" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#infoModal">

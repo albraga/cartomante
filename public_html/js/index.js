@@ -157,6 +157,8 @@ var Cartomancer = (function () {
             deck[j] = temp;
         }
         deck.reverse();
+        $('#btshuffle').prop('disabled', true);
+        $('#btcut3').prop('disabled', false);
     };
 
     var cut3times = function () {
@@ -165,6 +167,8 @@ var Cartomancer = (function () {
         var cut3 = deck.slice(34, deck.length);
         deck.length = 0;
         deck = cut2.concat(cut3, cut1);
+        $('#btcut3').prop('disabled', true);
+        $('#btlayout').prop('disabled', false);
     };
 
     var cutOnce = function () {
@@ -175,6 +179,9 @@ var Cartomancer = (function () {
     };
 
     var layThemOut = function () {
+        //$('#btlayout').prop('disabled', true);
+        //$('#btshuffle').prop('disabled', false);
+        
         var table = new Array(6);
         for (var x = 0; x < 5; x++) {
             table[x] = new Array(9);
@@ -202,6 +209,54 @@ var Cartomancer = (function () {
                 count++;
             }
         }
+
+        $(document).on("click", "#btlayout", function () {
+            $("#board").removeClass("hidden");
+        });
+
+        if (Cartomancer.relative_meanings[0].length === 0) {
+            $("#btinfo1").css("visibility", "hidden");
+        }
+        if (Cartomancer.relative_meanings[1].length === 0) {
+            $("#btinfo2").css("visibility", "hidden");
+        }
+        if (Cartomancer.relative_meanings[2].length === 0) {
+            $("#btinfo3").css("visibility", "hidden");
+        }
+        if (Cartomancer.relative_meanings[3].length === 0) {
+            $("#btinfo4").css("visibility", "hidden");
+        }
+        if (Cartomancer.relative_meanings[4].length === 0) {
+            $("#btinfo5").css("visibility", "hidden");
+        }
+        if (Cartomancer.relative_meanings[5].length === 0) {
+            $("#btinfo6").css("visibility", "hidden");
+        }
+
+        $(document).on("click", "#btinfo1", function () {
+            $(".modal-body").html(Cartomancer.relative_meanings[0]);
+        });
+
+        $(document).on("click", "#btinfo2", function () {
+            $(".modal-body").html(Cartomancer.relative_meanings[1]);
+        });
+
+        $(document).on("click", "#btinfo3", function () {
+            $(".modal-body").html(Cartomancer.relative_meanings[2]);
+        });
+
+        $(document).on("click", "#btinfo4", function () {
+            $(".modal-body").html(Cartomancer.relative_meanings[3]);
+        });
+
+        $(document).on("click", "#btinfo5", function () {
+            $(".modal-body").html(Cartomancer.relative_meanings[4]);
+        });
+
+        $(document).on("click", "#btinfo6", function () {
+            $(".modal-body").html(Cartomancer.relative_meanings[5]);
+        });
+
     };
 
     var writeWords = function (table) {
@@ -325,49 +380,4 @@ var Cartomancer = (function () {
 
 Cartomancer.setLANG(Cartomancer.PT_BR);
 
-Cartomancer.shuffle();
-Cartomancer.cut3times();
-Cartomancer.layThemOut();
-
-if (Cartomancer.relative_meanings[0].length === 0) {
-    $("#btinfo1").css("visibility", "hidden");
-}
-if (Cartomancer.relative_meanings[1].length === 0) {
-    $("#btinfo2").css("visibility", "hidden");
-}
-if (Cartomancer.relative_meanings[2].length === 0) {
-    $("#btinfo3").css("visibility", "hidden");
-}
-if (Cartomancer.relative_meanings[3].length === 0) {
-    $("#btinfo4").css("visibility", "hidden");
-}
-if (Cartomancer.relative_meanings[4].length === 0) {
-    $("#btinfo5").css("visibility", "hidden");
-}
-if (Cartomancer.relative_meanings[5].length === 0) {
-    $("#btinfo6").css("visibility", "hidden");
-}
-
-$(document).on("click", "#btinfo1", function () {
-    $(".modal-body").html(Cartomancer.relative_meanings[0]);
-});
-
-$(document).on("click", "#btinfo2", function () {
-    $(".modal-body").html(Cartomancer.relative_meanings[1]);
-});
-
-$(document).on("click", "#btinfo3", function () {
-    $(".modal-body").html(Cartomancer.relative_meanings[2]);
-});
-
-$(document).on("click", "#btinfo4", function () {
-    $(".modal-body").html(Cartomancer.relative_meanings[3]);
-});
-
-$(document).on("click", "#btinfo5", function () {
-    $(".modal-body").html(Cartomancer.relative_meanings[4]);
-});
-
-$(document).on("click", "#btinfo6", function () {
-    $(".modal-body").html(Cartomancer.relative_meanings[5]);
-});
+$('#btcut3, #btlayout').prop('disabled', true);
