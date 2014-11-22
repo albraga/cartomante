@@ -324,6 +324,7 @@ var Cartomancer = (function () {
 }());
 
 Cartomancer.setLANG(Cartomancer.PT_BR);
+
 Cartomancer.shuffle();
 Cartomancer.cut3times();
 Cartomancer.layThemOut();
