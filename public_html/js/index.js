@@ -197,7 +197,7 @@ var Cartomancer = (function () {
                 img.width = 100;
                 img.height = 125;
                 img.setAttribute('title', table[i][j].individual_meaning[Cartomancer.PT_BR]);
-                var roh = '#roh'.concat(count.toString());
+                var roh = '#card'.concat(count.toString());
                 document.querySelector(roh).appendChild(img);
                 count++;
             }
@@ -318,9 +318,7 @@ var Cartomancer = (function () {
         cutOnce: cutOnce,
         cut3times: cut3times,
         layThemOut: layThemOut,
-        relative_meanings: function () {
-            return relative_meanings;
-        }
+        relative_meanings: relative_meanings
     };
 
 }());
@@ -329,10 +327,46 @@ Cartomancer.setLANG(Cartomancer.PT_BR);
 Cartomancer.shuffle();
 Cartomancer.cut3times();
 Cartomancer.layThemOut();
-var means = Cartomancer.relative_meanings();
 
-
-
-for (var y = 0; y < means.length; y++) {
-    alert(means[y]);
+if (Cartomancer.relative_meanings[0].length === 0) {
+    $("#btinfo1").css("visibility", "hidden");
 }
+if (Cartomancer.relative_meanings[1].length === 0) {
+    $("#btinfo2").css("visibility", "hidden");
+}
+if (Cartomancer.relative_meanings[2].length === 0) {
+    $("#btinfo3").css("visibility", "hidden");
+}
+if (Cartomancer.relative_meanings[3].length === 0) {
+    $("#btinfo4").css("visibility", "hidden");
+}
+if (Cartomancer.relative_meanings[4].length === 0) {
+    $("#btinfo5").css("visibility", "hidden");
+}
+if (Cartomancer.relative_meanings[5].length === 0) {
+    $("#btinfo6").css("visibility", "hidden");
+}
+
+$(document).on("click", "#btinfo1", function () {
+    $(".modal-body").html(Cartomancer.relative_meanings[0]);
+});
+
+$(document).on("click", "#btinfo2", function () {
+    $(".modal-body").html(Cartomancer.relative_meanings[1]);
+});
+
+$(document).on("click", "#btinfo3", function () {
+    $(".modal-body").html(Cartomancer.relative_meanings[2]);
+});
+
+$(document).on("click", "#btinfo4", function () {
+    $(".modal-body").html(Cartomancer.relative_meanings[3]);
+});
+
+$(document).on("click", "#btinfo5", function () {
+    $(".modal-body").html(Cartomancer.relative_meanings[4]);
+});
+
+$(document).on("click", "#btinfo6", function () {
+    $(".modal-body").html(Cartomancer.relative_meanings[5]);
+});

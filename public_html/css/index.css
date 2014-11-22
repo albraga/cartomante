@@ -1,8 +1,7 @@
-span.glyphicon-info-sign {
+span.glyphicon-info-sign, span.glyphicon-remove {
     font-size: 4em;
-    padding: 40px;
 }
 
-a img {
-    padding-bottom: 30px;
+button.btn-lg {
+    margin-right: 40px;
 }
