@@ -194,7 +194,7 @@ var Cartomancer = (function () {
                 count++;
             }
         }
-        writeWords(table);
+        createTokens(table);
 
         var count = 1;
         for (var i = 0; i < 6; i++) {
@@ -259,32 +259,32 @@ var Cartomancer = (function () {
 
     };
 
-    var writeWords = function (table) {
-        var words = new Array(6);
-        for (var i = 0; i < words.length; i++) {
-            words[i] = "";
+    var createTokens = function (table) {
+        var tokens = new Array(6);
+        for (var i = 0; i < tokens.length; i++) {
+            tokens[i] = "";
         }
         for (var row = 0; row < 6; row++) {
             for (var column = 0; column < table[row].length; column++) {
                 var name_tmp = table[row][column].name;
-                var words_temp = words[row];
-                if (name_tmp === words_temp.substr(words_temp.length - name_tmp.length)) {
-                    words[row] += table[row][column].name;
+                var tokens_temp = tokens[row];
+                if (name_tmp === tokens_temp.substr(tokens_temp.length - name_tmp.length)) {
+                    tokens[row] += table[row][column].name;
                 } else {
-                    words[row] += " " + table[row][column].name;
+                    tokens[row] += " " + table[row][column].name;
                 }
             }
         }
-        readWords(words);
+        interpretTokens(tokens);
     };
 
-    var readWords = function (words) {
+    var interpretTokens = function (tokens) {
 
-        for (var x = 0; x < words.length; x++) {
+        for (var x = 0; x < tokens.length; x++) {
             relative_meanings[x] = "";
         }
-        for (var i = 0; i < words.length; i++) {
-            var wordz = words[i].split(" ");
+        for (var i = 0; i < tokens.length; i++) {
+            var wordz = tokens[i].split(" ");
             for (var j = 0; j < wordz.length; j++) {
                 switch (wordz[j]) {
                     case ace4.token :
