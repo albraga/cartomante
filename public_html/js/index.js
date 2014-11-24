@@ -150,6 +150,7 @@ var Cartomancer = (function () {
     var seven2 = new Word('sevenseven', ['Levity.', 'Leviandade.']);
 
     var shuffle = function () {
+        $('a img').remove();
         for (var i = deck.length - 1; i > 0; i--) {
             var j = Math.floor(Math.random() * (i + 1));
             var temp = deck[i];
@@ -178,8 +179,8 @@ var Cartomancer = (function () {
         deck.length = 0;
         deck = cut1.concat(cut2);
     };
-
-    var layThemOut = function () {
+    
+    var createTable = function() {
         var table = new Array(6);
         for (var x = 0; x < 5; x++) {
             table[x] = new Array(9);
@@ -192,7 +193,12 @@ var Cartomancer = (function () {
                 count++;
             }
         }
-        createTokens(table);
+        return table;
+    };
+
+    var layThemOut = function () {
+        
+        var table = createTokens(createTable());
 
         var count = 1;
         for (var i = 0; i < 6; i++) {
@@ -277,6 +283,7 @@ var Cartomancer = (function () {
             }
         }
         interpretTokens(tokens);
+        return table;
     };
 
     var interpretTokens = function (tokens) {
