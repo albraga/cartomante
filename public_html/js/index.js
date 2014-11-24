@@ -168,6 +168,7 @@ var Cartomancer = (function () {
         deck.length = 0;
         deck = cut2.concat(cut3, cut1);
         $('#btcut3').prop('disabled', true);
+        $('#btlayout').removeClass('hidden');
         $('#btlayout').prop('disabled', false);
     };
 
@@ -179,9 +180,6 @@ var Cartomancer = (function () {
     };
 
     var layThemOut = function () {
-        //$('#btlayout').prop('disabled', true);
-        //$('#btshuffle').prop('disabled', false);
-        
         var table = new Array(6);
         for (var x = 0; x < 5; x++) {
             table[x] = new Array(9);
@@ -203,7 +201,7 @@ var Cartomancer = (function () {
                 img.src = table[i][j].img;
                 img.width = 100;
                 img.height = 125;
-                img.setAttribute('title', table[i][j].individual_meaning[Cartomancer.PT_BR]);
+                img.setAttribute('title', table[i][j].individual_meaning[LANG]);
                 var roh = '#card'.concat(count.toString());
                 document.querySelector(roh).appendChild(img);
                 count++;
@@ -214,48 +212,51 @@ var Cartomancer = (function () {
             $("#board").removeClass("hidden");
         });
 
-        if (Cartomancer.relative_meanings[0].length === 0) {
+        if (relative_meanings[0].length === 0) {
             $("#btinfo1").css("visibility", "hidden");
         }
-        if (Cartomancer.relative_meanings[1].length === 0) {
+        if (relative_meanings[1].length === 0) {
             $("#btinfo2").css("visibility", "hidden");
         }
-        if (Cartomancer.relative_meanings[2].length === 0) {
+        if (relative_meanings[2].length === 0) {
             $("#btinfo3").css("visibility", "hidden");
         }
-        if (Cartomancer.relative_meanings[3].length === 0) {
+        if (relative_meanings[3].length === 0) {
             $("#btinfo4").css("visibility", "hidden");
         }
-        if (Cartomancer.relative_meanings[4].length === 0) {
+        if (relative_meanings[4].length === 0) {
             $("#btinfo5").css("visibility", "hidden");
         }
-        if (Cartomancer.relative_meanings[5].length === 0) {
+        if (relative_meanings[5].length === 0) {
             $("#btinfo6").css("visibility", "hidden");
         }
 
         $(document).on("click", "#btinfo1", function () {
-            $(".modal-body").html(Cartomancer.relative_meanings[0]);
+            $(".modal-body").html(relative_meanings[0]);
         });
 
         $(document).on("click", "#btinfo2", function () {
-            $(".modal-body").html(Cartomancer.relative_meanings[1]);
+            $(".modal-body").html(relative_meanings[1]);
         });
 
         $(document).on("click", "#btinfo3", function () {
-            $(".modal-body").html(Cartomancer.relative_meanings[2]);
+            $(".modal-body").html(relative_meanings[2]);
         });
 
         $(document).on("click", "#btinfo4", function () {
-            $(".modal-body").html(Cartomancer.relative_meanings[3]);
+            $(".modal-body").html(relative_meanings[3]);
         });
 
         $(document).on("click", "#btinfo5", function () {
-            $(".modal-body").html(Cartomancer.relative_meanings[4]);
+            $(".modal-body").html(relative_meanings[4]);
         });
 
         $(document).on("click", "#btinfo6", function () {
-            $(".modal-body").html(Cartomancer.relative_meanings[5]);
+            $(".modal-body").html(relative_meanings[5]);
         });
+        
+        $('#btlayout').addClass('hidden');
+        $('#btshuffle').prop('disabled', false);
 
     };
 
@@ -364,6 +365,8 @@ var Cartomancer = (function () {
     var setLANG = function (lang) {
         LANG = lang;
     };
+    
+    $('#btcut3, #btlayout').prop('disabled', true);
 
     return {
         EN_US: 0,
@@ -372,12 +375,9 @@ var Cartomancer = (function () {
         shuffle: shuffle,
         cutOnce: cutOnce,
         cut3times: cut3times,
-        layThemOut: layThemOut,
-        relative_meanings: relative_meanings
+        layThemOut: layThemOut
     };
 
 }());
 
 Cartomancer.setLANG(Cartomancer.PT_BR);
-
-$('#btcut3, #btlayout').prop('disabled', true);
