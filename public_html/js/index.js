@@ -1,7 +1,6 @@
 var Cartomancer = (function () {
 
     var LANG = -1;
-    var relative_meanings = [6];
 
     function Card(id, name, suit, value, individual_meaning, img) {
         this.id = id;
@@ -180,34 +179,29 @@ var Cartomancer = (function () {
         deck = cut1.concat(cut2);
     };
     
-    var createTable = function() {
-        var table = new Array(6);
-        for (var x = 0; x < 5; x++) {
-            table[x] = new Array(9);
-        }
-        table[5] = new Array(7);
+    var fillTable = function() {
+        var teybuhl = new Array(new Array(9), new Array(9), new Array(9), new Array(9), new Array(9), new Array(7));
         var count = 0;
         for (var i = 0; i < 6; i++) {
-            for (var j = 0; j < table[i].length; j++) {
-                table[i][j] = deck[count];
+            for (var j = 0; j < teybuhl[i].length; j++) {
+                teybuhl[i][j] = deck[count];
                 count++;
             }
         }
-        return table;
+        return teybuhl;
     };
 
     var layThemOut = function () {
-        
-        var table = createTokens(createTable());
-
+        var teybuhl = fillTable();
+        var relative_meanings = fillRelativeMeanings(createTokens(teybuhl));
         var count = 1;
         for (var i = 0; i < 6; i++) {
-            for (var j = 0; j < table[i].length; j++) {
+            for (var j = 0; j < teybuhl[i].length; j++) {
                 var img = document.createElement("img");
-                img.src = table[i][j].img;
+                img.src = teybuhl[i][j].img;
                 img.width = 100;
                 img.height = 125;
-                img.setAttribute('title', table[i][j].individual_meaning[LANG]);
+                img.setAttribute('title', teybuhl[i][j].individual_meaning[LANG]);
                 var roh = '#card'.concat(count.toString());
                 document.querySelector(roh).appendChild(img);
                 count++;
@@ -266,28 +260,27 @@ var Cartomancer = (function () {
 
     };
 
-    var createTokens = function (table) {
+    var createTokens = function (teybuhl) {
         var tokens = new Array(6);
         for (var i = 0; i < tokens.length; i++) {
             tokens[i] = "";
         }
         for (var row = 0; row < 6; row++) {
-            for (var column = 0; column < table[row].length; column++) {
-                var name_tmp = table[row][column].name;
+            for (var column = 0; column < teybuhl[row].length; column++) {
+                var name_tmp = teybuhl[row][column].name;
                 var tokens_temp = tokens[row];
                 if (name_tmp === tokens_temp.substr(tokens_temp.length - name_tmp.length)) {
-                    tokens[row] += table[row][column].name;
+                    tokens[row] += teybuhl[row][column].name;
                 } else {
-                    tokens[row] += " " + table[row][column].name;
+                    tokens[row] += " " + teybuhl[row][column].name;
                 }
             }
         }
-        interpretTokens(tokens);
-        return table;
+        return tokens;
     };
 
-    var interpretTokens = function (tokens) {
-
+    var fillRelativeMeanings = function (tokens) {
+        var relative_meanings = [6];
         for (var x = 0; x < tokens.length; x++) {
             relative_meanings[x] = "";
         }
@@ -367,6 +360,7 @@ var Cartomancer = (function () {
                 }
             }
         }
+        return relative_meanings;
     };
 
     var setLANG = function (lang) {
