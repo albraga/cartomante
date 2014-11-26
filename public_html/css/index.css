@@ -5,3 +5,7 @@ span.glyphicon-info-sign, span.glyphicon-remove, span.glyphicon-random, span.gly
 button.btn-lg {
     margin-right: 40px;
 }
+
+.modal-body {
+    font-size: 2em;
+}
