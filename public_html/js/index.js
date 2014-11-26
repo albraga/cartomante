@@ -149,7 +149,8 @@ var Cartomancer = (function () {
     var seven2 = new Word('sevenseven', ['Levity.', 'Leviandade.']);
 
     var shuffle = function () {
-        $('a img').remove();
+        clearBoard();
+
         for (var i = deck.length - 1; i > 0; i--) {
             var j = Math.floor(Math.random() * (i + 1));
             var temp = deck[i];
@@ -179,6 +180,16 @@ var Cartomancer = (function () {
         deck = cut1.concat(cut2);
     };
     
+    var clearBoard = function() {
+        $('.rm-img').remove();
+        $("#btinfo1").css("visibility", "hidden");
+        $("#btinfo2").css("visibility", "hidden");
+        $("#btinfo3").css("visibility", "hidden");
+        $("#btinfo4").css("visibility", "hidden");
+        $("#btinfo5").css("visibility", "hidden");
+        $("#btinfo6").css("visibility", "hidden");
+    };
+    
     var fillTable = function() {
         var teybuhl = new Array(new Array(9), new Array(9), new Array(9), new Array(9), new Array(9), new Array(7));
         var count = 0;
@@ -201,6 +212,7 @@ var Cartomancer = (function () {
                 img.src = teybuhl[i][j].img;
                 img.width = 100;
                 img.height = 125;
+                img.setAttribute('class', 'rm-img');
                 img.setAttribute('title', teybuhl[i][j].individual_meaning[LANG]);
                 var roh = '#card'.concat(count.toString());
                 document.querySelector(roh).appendChild(img);
@@ -214,21 +226,33 @@ var Cartomancer = (function () {
 
         if (relative_meanings[0].length === 0) {
             $("#btinfo1").css("visibility", "hidden");
+        } else {
+            $("#btinfo1").css("visibility", "visible");
         }
         if (relative_meanings[1].length === 0) {
             $("#btinfo2").css("visibility", "hidden");
+        }  else {
+            $("#btinfo2").css("visibility", "visible");
         }
         if (relative_meanings[2].length === 0) {
             $("#btinfo3").css("visibility", "hidden");
+        }  else {
+            $("#btinfo3").css("visibility", "visible");
         }
         if (relative_meanings[3].length === 0) {
             $("#btinfo4").css("visibility", "hidden");
+        }  else {
+            $("#btinfo4").css("visibility", "visible");
         }
         if (relative_meanings[4].length === 0) {
             $("#btinfo5").css("visibility", "hidden");
+        }  else {
+            $("#btinfo5").css("visibility", "visible");
         }
         if (relative_meanings[5].length === 0) {
             $("#btinfo6").css("visibility", "hidden");
+        }  else {
+            $("#btinfo6").css("visibility", "visible");
         }
 
         $(document).on("click", "#btinfo1", function () {
