@@ -1,4 +1,4 @@
-var Cartomancer = (function () {
+var Cartomancer = (function ($) {
 
     var LANG = -1;
 
@@ -182,12 +182,7 @@ var Cartomancer = (function () {
     
     var clearBoard = function() {
         $('.rm-img').remove();
-        $("#btinfo1").css("visibility", "hidden");
-        $("#btinfo2").css("visibility", "hidden");
-        $("#btinfo3").css("visibility", "hidden");
-        $("#btinfo4").css("visibility", "hidden");
-        $("#btinfo5").css("visibility", "hidden");
-        $("#btinfo6").css("visibility", "hidden");
+        $(".btinfo-hidden").css("visibility", "hidden");
     };
     
     var fillTable = function() {
@@ -403,6 +398,6 @@ var Cartomancer = (function () {
         layThemOut: layThemOut
     };
 
-}());
+}(jQuery));
 
 Cartomancer.setLANG(Cartomancer.PT_BR);
