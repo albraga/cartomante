@@ -415,8 +415,8 @@ var Cartomancer = (function ($) {
 Cartomancer.setLANG(Cartomancer.PT_BR);
 
 $(document).ready(function(){
-  //language_complete = navigator.language.split("-");
-  language = "pt";//(language_complete[0]);
+  language_complete = navigator.language.split("-");
+  language = (language_complete[0]);
   i18n.init({ lng: language, debug: true }, function() {
       $("#traduza").i18n();
   });
