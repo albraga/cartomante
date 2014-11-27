@@ -22,3 +22,11 @@ button.btn-lg {
 .row {
     border: 1px solid white;
 }
+
+.bk-black {
+    background-color: black;
+}
+
+.col-md-12, .col-md-10 {
+    padding: 5px;
+}

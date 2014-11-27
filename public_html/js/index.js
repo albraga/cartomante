@@ -179,13 +179,13 @@ var Cartomancer = (function ($) {
         deck.length = 0;
         deck = cut1.concat(cut2);
     };
-    
-    var clearBoard = function() {
+
+    var clearBoard = function () {
         $('.rm-img').remove();
         $(".btinfo-hidden").css("visibility", "hidden");
     };
-    
-    var fillTable = function() {
+
+    var fillTable = function () {
         var teybuhl = new Array(new Array(9), new Array(9), new Array(9), new Array(9), new Array(9), new Array(7));
         var count = 0;
         for (var i = 0; i < 6; i++) {
@@ -200,6 +200,17 @@ var Cartomancer = (function ($) {
     var layThemOut = function () {
         var teybuhl = fillTable();
         var relative_meanings = fillRelativeMeanings(createTokens(teybuhl));
+        if (relative_meanings[0] === "" &&
+                relative_meanings[1] === "" &&
+                relative_meanings[2] === "" &&
+                relative_meanings[3] === "" &&
+                relative_meanings[4] === "" &&
+                relative_meanings[5] === "") {
+            $('.modal-body').html('Nenhuma previsão relativa');
+            $('#infoModal').modal({
+                show: true
+            });
+        }
         var count = 1;
         for (var i = 0; i < 6; i++) {
             for (var j = 0; j < teybuhl[i].length; j++) {
@@ -226,27 +237,27 @@ var Cartomancer = (function ($) {
         }
         if (relative_meanings[1].length === 0) {
             $("#btinfo2").css("visibility", "hidden");
-        }  else {
+        } else {
             $("#btinfo2").css("visibility", "visible");
         }
         if (relative_meanings[2].length === 0) {
             $("#btinfo3").css("visibility", "hidden");
-        }  else {
+        } else {
             $("#btinfo3").css("visibility", "visible");
         }
         if (relative_meanings[3].length === 0) {
             $("#btinfo4").css("visibility", "hidden");
-        }  else {
+        } else {
             $("#btinfo4").css("visibility", "visible");
         }
         if (relative_meanings[4].length === 0) {
             $("#btinfo5").css("visibility", "hidden");
-        }  else {
+        } else {
             $("#btinfo5").css("visibility", "visible");
         }
         if (relative_meanings[5].length === 0) {
             $("#btinfo6").css("visibility", "hidden");
-        }  else {
+        } else {
             $("#btinfo6").css("visibility", "visible");
         }
 
@@ -273,7 +284,7 @@ var Cartomancer = (function ($) {
         $(document).on("click", "#btinfo6", function () {
             $(".modal-body").html(relative_meanings[5]);
         });
-        
+
         $('#btlayout').addClass('hidden');
         $('#btshuffle').prop('disabled', false);
 
@@ -385,7 +396,7 @@ var Cartomancer = (function ($) {
     var setLANG = function (lang) {
         LANG = lang;
     };
-    
+
     $('#btcut3, #btlayout').prop('disabled', true);
 
     return {
