@@ -1,3 +1,8 @@
+body {
+    background-image: url("../img/casino.jpg");
+}
+
+
 span.glyphicon-eye-open, span.glyphicon-remove, span.glyphicon-random, span.glyphicon-sort, span.glyphicon-th {
     font-size: 4em;
 }
@@ -12,4 +17,8 @@ button.btn-lg {
 
 .btinfo-hidden {
     
+}
+
+.row {
+    border: 1px solid white;
 }
