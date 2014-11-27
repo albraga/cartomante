@@ -1,7 +1,7 @@
 var Cartomancer = (function ($) {
 
     var LANG = -1;
-
+    
     function Card(id, name, suit, value, individual_meaning, img) {
         this.id = id;
         this.name = name;
