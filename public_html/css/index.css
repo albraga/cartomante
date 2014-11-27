@@ -3,7 +3,7 @@ body {
 }
 
 
-span.glyphicon-eye-open, span.glyphicon-remove, span.glyphicon-random, span.glyphicon-sort, span.glyphicon-th {
+#traduza, span.glyphicon-eye-open, span.glyphicon-remove, span.glyphicon-random, span.glyphicon-sort, span.glyphicon-th {
     font-size: 4em;
 }
 

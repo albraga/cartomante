@@ -1,7 +1,7 @@
 var Cartomancer = (function ($) {
 
     var LANG = -1;
-    
+
     function Card(id, name, suit, value, individual_meaning, img) {
         this.id = id;
         this.name = name;
@@ -151,13 +151,14 @@ var Cartomancer = (function ($) {
     var shuffle = function () {
         clearBoard();
 
+
         for (var i = deck.length - 1; i > 0; i--) {
             var j = Math.floor(Math.random() * (i + 1));
             var temp = deck[i];
             deck[i] = deck[j];
             deck[j] = temp;
         }
-        deck.reverse();
+        //deck.reverse();
         $('#btshuffle').prop('disabled', true);
         $('#btcut3').prop('disabled', false);
     };
@@ -412,3 +413,11 @@ var Cartomancer = (function ($) {
 }(jQuery));
 
 Cartomancer.setLANG(Cartomancer.PT_BR);
+
+$(document).ready(function(){
+  //language_complete = navigator.language.split("-");
+  language = "pt";//(language_complete[0]);
+  i18n.init({ lng: language, debug: true }, function() {
+      $("#traduza").i18n();
+  });
+});
