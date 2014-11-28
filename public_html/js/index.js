@@ -1,5 +1,15 @@
 var Cartomancer = (function ($) {
-
+    
+    var noprediction;
+    
+    i18n.init({fallbackLng: false}, function () {
+    $("#shuhfuhl").i18n();
+    $("#kuht").i18n();
+    $("#skater").i18n();
+    $("#pridikshuhn").i18n();
+    noprediction = $.t("noprediction");
+});
+   
     var LANG = -1;
 
     function Card(id, name, suit, value, individual_meaning, img) {
@@ -207,7 +217,7 @@ var Cartomancer = (function ($) {
                 relative_meanings[3] === "" &&
                 relative_meanings[4] === "" &&
                 relative_meanings[5] === "") {
-            $('.modal-body').html('Nenhuma previsão relativa');
+            $('.modal-body').html(noprediction);
             $('#infoModal').modal({
                 show: true
             });
@@ -399,21 +409,6 @@ var Cartomancer = (function ($) {
     };
 
     $('#btcut3, #btlayout').prop('disabled', true);
-    
-    
-    i18n.init( function () {
-            $("#shuhfuhl").i18n();
-            $("#kuht").i18n();
-            $("#skater").i18n();
-        });
-
-//    $(document).ready(function () {
-//        language_complete = navigator.language.split("-");
-//        language = (language_complete[0]);
-//        i18n.init({lng: language, debug: true}, function () {
-//            $("#shuhfuhl").i18n();
-//        });
-//    });
 
     return {
         EN_US: 0,
@@ -429,3 +424,4 @@ var Cartomancer = (function ($) {
 
 Cartomancer.setLANG(Cartomancer.PT_BR);
 
+ 

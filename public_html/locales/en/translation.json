@@ -1,5 +1,7 @@
 {
   "shuffle": "Shuffle",
   "cut": "Cut",
-  "scatter": "Scatter"
+  "scatter": "Scatter",
+  "prediction": "Prediction",
+  "noprediction": "No prediction was found."
 }

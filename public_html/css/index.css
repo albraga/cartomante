@@ -3,11 +3,11 @@ body {
 }
 
 
-span.glyphicon-eye-open, span.glyphicon-remove, span.glyphicon-random, span.glyphicon-sort, span.glyphicon-th {
+span.glyphicon-eye-open {
     font-size: 4em;
 }
 
-#shuhfuhl, #kuht, #skater {
+#shuhfuhl, #kuht, #skater, #pridikshuhn {
     font-size: 2em;
 }
 

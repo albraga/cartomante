@@ -1,5 +1,7 @@
 {
     "shuffle": "Embaralhar",
     "cut": "Cortar",
-    "scatter": "Espalhar"
+    "scatter": "Espalhar",
+    "prediction": "Previsão",
+    "noprediction": "Não foi encontrada nenhuma previsão."
 }
