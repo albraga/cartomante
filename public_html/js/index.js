@@ -1,16 +1,15 @@
 var Cartomancer = (function ($) {
-    
-    var noprediction;
-    
-    i18n.init({fallbackLng: false}, function () {
-    $("#shuhfuhl").i18n();
-    $("#kuht").i18n();
-    $("#skater").i18n();
-    $("#pridikshuhn").i18n();
-    noprediction = $.t("noprediction");
-});
-   
+
     var LANG = -1;
+    var noprediction;
+
+    i18n.init({fallbackLng: false}, function () {
+        $("#shuhfuhl").i18n();
+        $("#kuht").i18n();
+        $("#skater").i18n();
+        $("#pridikshuhn").i18n();
+        noprediction = $.t("noprediction");
+    });  
 
     function Card(id, name, suit, value, individual_meaning, img) {
         this.id = id;
@@ -424,4 +423,4 @@ var Cartomancer = (function ($) {
 
 Cartomancer.setLANG(Cartomancer.PT_BR);
 
- 
+
