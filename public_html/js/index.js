@@ -226,8 +226,8 @@ var Cartomancer = (function ($) {
             for (var j = 0; j < teybuhl[i].length; j++) {
                 var img = document.createElement("img");
                 img.src = teybuhl[i][j].img;
-                img.width = 100;
-                img.height = 125;
+                img.width = 50;
+                img.height = 62.5;
                 img.setAttribute('class', 'rm-img');
                 img.setAttribute('title', teybuhl[i][j].individual_meaning[LANG]);
                 var roh = '#card'.concat(count.toString());

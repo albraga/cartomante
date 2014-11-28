@@ -2,13 +2,17 @@ body {
     background-image: url("../img/casino.jpg");
 }
 
+.top_img {
+    width: 50%;
+    height: 50%;
+}
 
-span.glyphicon-eye-open {
-    font-size: 4em;
+span.glyphicon-eye-open, span.glyphicon-remove {
+    font-size: 3em;
 }
 
 #shuhfuhl, #kuht, #skater, #pridikshuhn {
-    font-size: 2em;
+    font-size: 1em;
 }
 
 button.btn-lg {
@@ -31,6 +35,6 @@ button.btn-lg {
     background-color: black;
 }
 
-.col-md-12, .col-md-10 {
+.col-md-12, .col-md-11 {
     padding: 5px;
 }
