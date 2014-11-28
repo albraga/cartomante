@@ -399,6 +399,21 @@ var Cartomancer = (function ($) {
     };
 
     $('#btcut3, #btlayout').prop('disabled', true);
+    
+    
+    i18n.init( function () {
+            $("#shuhfuhl").i18n();
+            $("#kuht").i18n();
+            $("#skater").i18n();
+        });
+
+//    $(document).ready(function () {
+//        language_complete = navigator.language.split("-");
+//        language = (language_complete[0]);
+//        i18n.init({lng: language, debug: true}, function () {
+//            $("#shuhfuhl").i18n();
+//        });
+//    });
 
     return {
         EN_US: 0,
@@ -414,10 +429,3 @@ var Cartomancer = (function ($) {
 
 Cartomancer.setLANG(Cartomancer.PT_BR);
 
-$(document).ready(function(){
-  language_complete = navigator.language.split("-");
-  language = (language_complete[0]);
-  i18n.init({ lng: language, debug: true }, function() {
-      $("#traduza").i18n();
-  });
-});

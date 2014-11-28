@@ -13,18 +13,27 @@
         <![endif]-->
     </head>
     <body>
-        <div id="traduza" data-i18n="traduza"></div>
+        <div class="row">
+            <div class="col-md-10"></div>
+            <div class="col-md-2">
+                <a href="index.html?setLng=pt" class="btn btn-default btn-sm active" role="button">Português</a>
+                <a href="index.html?setLng=en" class="btn btn-default btn-sm active" role="button">English</a>
+            </div>
+        </div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 bk-black">
-                    <button id="btshuffle" type="button" class="btn btn-default" title="shuttle/embaralhar" onclick="Cartomancer.shuffle();">
+                    <button id="btshuffle" type="button" class="btn btn-default" onclick="Cartomancer.shuffle();">
                         <img src="img/card-shuffle.gif" alt="card shuffle">
+                        <br><span id="shuhfuhl" data-i18n="shuffle"></span>
                     </button>
                     <button id="btcut3" type="button" class="btn btn-default" title="cut 3 times/cortar três vezes" onclick="Cartomancer.cut3times();">
                         <img src="img/cut.jpg" alt="cut">
+                        <br><span id="kuht" data-i18n="cut"></span>
                     </button>
                     <button id="btlayout" type="button" class="btn btn-default" title="lay the cards out/espalhar as cartas" onclick="Cartomancer.layThemOut();">
                         <img src="img/layout.png" alt="lay out">
+                        <br><span id="skater" data-i18n="scatter"></span>
                     </button>
                 </div>
             </div>
