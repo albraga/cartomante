@@ -1,7 +1,7 @@
 var Cartomancer = (function ($) {
 
     var LANG = -1;
-    var noprediction;
+    var noprediction = "";
 
     i18n.init({fallbackLng: false}, function () {
         $("#shuhfuhl").i18n();
@@ -9,6 +9,7 @@ var Cartomancer = (function ($) {
         $("#skater").i18n();
         $("#pridikshuhn").i18n();
         noprediction = $.t("noprediction");
+        LANG = $.t("langgwij");
     });  
 
     function Card(id, name, suit, value, individual_meaning, img) {
@@ -410,9 +411,6 @@ var Cartomancer = (function ($) {
     $('#btcut3, #btlayout').prop('disabled', true);
 
     return {
-        EN_US: 0,
-        PT_BR: 1,
-        setLANG: setLANG,
         shuffle: shuffle,
         cutOnce: cutOnce,
         cut3times: cut3times,
@@ -420,7 +418,5 @@ var Cartomancer = (function ($) {
     };
 
 }(jQuery));
-
-Cartomancer.setLANG(Cartomancer.PT_BR);
 
 

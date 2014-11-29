@@ -3,5 +3,6 @@
   "cut": "Cut",
   "scatter": "Scatter",
   "prediction": "Prediction",
-  "noprediction": "No prediction was found."
+  "noprediction": "No prediction was found.",
+  "langgwij": "0"
 }
