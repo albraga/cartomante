@@ -169,6 +169,14 @@ var Cartomancer = (function ($) {
         }
         $('#btshuffle').prop('disabled', true);
         $('#btcut3').prop('disabled', false);
+        $("#pridikshuhn").css("visibility", "hidden");
+        $(".modal-body").html("<img src='img/loadingBar.gif'>");
+        $('#infoModal').modal({
+            show: true
+        });
+        window.setTimeout(function () {
+            $('#infoModal').modal('hide');
+        }, 4000);
     };
 
     var cut3times = function () {
@@ -180,13 +188,14 @@ var Cartomancer = (function ($) {
         $('#btcut3').prop('disabled', true);
         $('#btlayout').removeClass('hidden');
         $('#btlayout').prop('disabled', false);
-    };
-
-    var cutOnce = function () {
-        var cut1 = deck.slice(0, 26);
-        var cut2 = deck.slice(26, deck.length);
-        deck.length = 0;
-        deck = cut1.concat(cut2);
+        $("#pridikshuhn").css("visibility", "hidden");
+        $(".modal-body").html("<img src='img/loadingBar.gif'>");
+        $('#infoModal').modal({
+            show: true
+        });
+        window.setTimeout(function () {
+            $('#infoModal').modal('hide');
+        }, 2000);
     };
 
     var clearBoard = function () {
@@ -207,6 +216,7 @@ var Cartomancer = (function ($) {
     };
 
     var layThemOut = function () {
+        $("#pridikshuhn").css("visibility", "visible");
         var teybuhl = fillTable();
         var risk = risk_of_imprisonment(teybuhl);
         var relative_meanings = fillRelativeMeanings(createTokens(teybuhl));
@@ -245,8 +255,8 @@ var Cartomancer = (function ($) {
         $(document).on("click", "#btlayout", function () {
             $("#board").removeClass("hidden");
         });
-        
-        
+
+
         if (risk[0]) {
             $("#btrisk1").css("visibility", "visible");
         } else {
@@ -277,7 +287,7 @@ var Cartomancer = (function ($) {
         } else {
             $("#btrisk6").css("visibility", "hidden");
         }
-        
+
         $(document).on("click", "#btrisk1", function () {
             $(".modal-body").html(riskof);
         });
@@ -301,7 +311,7 @@ var Cartomancer = (function ($) {
         $(document).on("click", "#btrisk6", function () {
             $(".modal-body").html(riskof);
         });
-        
+
 
         if (relative_meanings[0].length === 0) {
             $("#btinfo1").css("visibility", "hidden");
@@ -495,7 +505,6 @@ var Cartomancer = (function ($) {
 
     return {
         shuffle: shuffle,
-        cutOnce: cutOnce,
         cut3times: cut3times,
         layThemOut: layThemOut
     };
