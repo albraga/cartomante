@@ -15,23 +15,24 @@
     <body>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-9">
+                <div class="col-md-9"></div>
+                <div class="col-md-3">
+                    <a id="bt_pt" href="index.html?setLng=pt" class="btn btn-primary btn-lg active" role="button">Português</a>
+                    <a id="bt_en" href="index.html?setLng=en" class="btn btn-primary btn-lg active" role="button">&nbsp;&nbsp;&nbsp;English&nbsp;&nbsp;&nbsp;</a>
+                </div>
+                <div class="col-md-12">
                     <button id="btshuffle" type="button" class="btn btn-default" onclick="Cartomancer.shuffle();">
                         <img src="img/card-shuffle.gif" alt="card shuffle" class="top_img">
                         <br><span id="shuhfuhl" data-i18n="shuffle"></span>
                     </button>
-                    <button id="btcut3" type="button" class="btn btn-default" title="cut 3 times/cortar três vezes" onclick="Cartomancer.cut3times();">
+                    <button id="btcut3" type="button" class="btn btn-default" onclick="Cartomancer.cut3times();">
                         <img src="img/cut.jpg" alt="cut" class="top_img">
                         <br><span id="kuht" data-i18n="cut"></span>
                     </button>
-                    <button id="btlayout" type="button" class="btn btn-default" title="lay the cards out/espalhar as cartas" onclick="Cartomancer.layThemOut();">
+                    <button id="btlayout" type="button" class="btn btn-default" onclick="Cartomancer.layThemOut();">
                         <img src="img/layout.png" alt="lay out" class="top_img">
                         <br><span id="skater" data-i18n="scatter"></span>
                     </button>
-                </div>
-                <div class="col-md-3">
-                    <a href="index.html?setLng=pt" class="btn btn-primary btn-lg active" role="button">Português</a>
-                    <a href="index.html?setLng=en" class="btn btn-primary btn-lg active" role="button">&nbsp;&nbsp;&nbsp;English&nbsp;&nbsp;&nbsp;</a>
                 </div>
             </div>
         </div>

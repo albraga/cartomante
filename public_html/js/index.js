@@ -404,10 +404,6 @@ var Cartomancer = (function ($) {
         return relative_meanings;
     };
 
-    var setLANG = function (lang) {
-        LANG = lang;
-    };
-
     $('#btcut3, #btlayout').prop('disabled', true);
 
     return {
