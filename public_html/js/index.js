@@ -375,6 +375,9 @@ var Cartomancer = (function ($) {
                         teybuhl[row][column].name === "jack") {
                     if (teybuhl[row][column - 1] !== undefined &&
                             teybuhl[row][column + 1] !== undefined &&
+                            teybuhl[row][column - 1].name !== "king" &&
+                            teybuhl[row][column - 1].name !== "queen" &&
+                            teybuhl[row][column - 1].name !== "jack" &&
                             teybuhl[row][column - 1].name === teybuhl[row][column + 1].name) {
                         tokens[row] = true;
                     }
