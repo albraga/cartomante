@@ -7,7 +7,7 @@ var Cartomancer = (function ($) {
         $("#shuhfuhl").i18n();
         $("#kuht").i18n();
         $("#skater").i18n();
-        $("#pridikshuhn").i18n();
+        $(".pridikshuhn").i18n();
         noprediction = $.t("noprediction");
         LANG = $.t("langgwij");
         riskof = $.t("riskof");

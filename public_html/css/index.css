@@ -8,10 +8,10 @@ body {
 }
 
 span.glyphicon-eye-open, span.glyphicon-remove {
-    font-size: 3em;
+    font-size: 2em;
 }
 
-#shuhfuhl, #kuht, #skater, #pridikshuhn {
+#shuhfuhl, #kuht, #skater, .pridikshuhn {
     font-size: 1em;
 }
 
