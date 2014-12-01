@@ -10,7 +10,8 @@ var Cartomancer = (function ($) {
         $("#pridikshuhn").i18n();
         noprediction = $.t("noprediction");
         LANG = $.t("langgwij");
-    });  
+        riskof = $.t("riskof");
+    });
 
     function Card(id, name, suit, value, individual_meaning, img) {
         this.id = id;
@@ -160,15 +161,12 @@ var Cartomancer = (function ($) {
 
     var shuffle = function () {
         clearBoard();
-
-
         for (var i = deck.length - 1; i > 0; i--) {
             var j = Math.floor(Math.random() * (i + 1));
             var temp = deck[i];
             deck[i] = deck[j];
             deck[j] = temp;
         }
-        //deck.reverse();
         $('#btshuffle').prop('disabled', true);
         $('#btcut3').prop('disabled', false);
     };
@@ -210,13 +208,20 @@ var Cartomancer = (function ($) {
 
     var layThemOut = function () {
         var teybuhl = fillTable();
+        var risk = risk_of_imprisonment(teybuhl);
         var relative_meanings = fillRelativeMeanings(createTokens(teybuhl));
         if (relative_meanings[0] === "" &&
                 relative_meanings[1] === "" &&
                 relative_meanings[2] === "" &&
                 relative_meanings[3] === "" &&
                 relative_meanings[4] === "" &&
-                relative_meanings[5] === "") {
+                relative_meanings[5] === "" &&
+                risk[0] === false &&
+                risk[1] === false &&
+                risk[2] === false &&
+                risk[3] === false &&
+                risk[4] === false &&
+                risk[5] === false) {
             $('.modal-body').html(noprediction);
             $('#infoModal').modal({
                 show: true
@@ -240,6 +245,63 @@ var Cartomancer = (function ($) {
         $(document).on("click", "#btlayout", function () {
             $("#board").removeClass("hidden");
         });
+        
+        
+        if (risk[0]) {
+            $("#btrisk1").css("visibility", "visible");
+        } else {
+            $("#btrisk1").css("visibility", "hidden");
+        }
+        if (risk[1]) {
+            $("#btrisk2").css("visibility", "visible");
+        } else {
+            $("#btrisk2").css("visibility", "hidden");
+        }
+        if (risk[2]) {
+            $("#btrisk3").css("visibility", "visible");
+        } else {
+            $("#btrisk3").css("visibility", "hidden");
+        }
+        if (risk[3]) {
+            $("#btrisk4").css("visibility", "visible");
+        } else {
+            $("#btrisk4").css("visibility", "hidden");
+        }
+        if (risk[4]) {
+            $("#btrisk5").css("visibility", "visible");
+        } else {
+            $("#btrisk5").css("visibility", "hidden");
+        }
+        if (risk[5]) {
+            $("#btrisk6").css("visibility", "visible");
+        } else {
+            $("#btrisk6").css("visibility", "hidden");
+        }
+        
+        $(document).on("click", "#btrisk1", function () {
+            $(".modal-body").html(riskof);
+        });
+
+        $(document).on("click", "#btrisk2", function () {
+            $(".modal-body").html(riskof);
+        });
+
+        $(document).on("click", "#btrisk3", function () {
+            $(".modal-body").html(riskof);
+        });
+
+        $(document).on("click", "#btrisk4", function () {
+            $(".modal-body").html(riskof);
+        });
+
+        $(document).on("click", "#btrisk5", function () {
+            $(".modal-body").html(riskof);
+        });
+
+        $(document).on("click", "#btrisk6", function () {
+            $(".modal-body").html(riskof);
+        });
+        
 
         if (relative_meanings[0].length === 0) {
             $("#btinfo1").css("visibility", "hidden");
@@ -299,6 +361,28 @@ var Cartomancer = (function ($) {
         $('#btlayout').addClass('hidden');
         $('#btshuffle').prop('disabled', false);
 
+    };
+
+    var risk_of_imprisonment = function (teybuhl) {
+        var tokens = new Array(6);
+        for (var i = 0; i < tokens.length; i++) {
+            tokens[i] = false;
+        }
+        for (var row = 0; row < 6; row++) {
+            for (var column = 0; column < teybuhl[row].length; column++) {
+                if (teybuhl[row][column].name === "king" ||
+                        teybuhl[row][column].name === "queen" ||
+                        teybuhl[row][column].name === "jack") {
+                    if (teybuhl[row][column - 1] !== undefined &&
+                            teybuhl[row][column + 1] !== undefined &&
+                            teybuhl[row][column - 1].name === teybuhl[row][column + 1].name) {
+                        tokens[row] = true;
+                    }
+
+                }
+            }
+        }
+        return tokens;
     };
 
     var createTokens = function (teybuhl) {
