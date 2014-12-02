@@ -169,7 +169,7 @@ var Cartomancer = (function ($) {
         }
         $('#btshuffle').prop('disabled', true);
         $('#btcut3').prop('disabled', false);
-        $("#pridikshuhn").css("visibility", "hidden");
+        $("#myModalLabel").css("visibility", "hidden");
         $(".modal-body").html("<img src='img/loadingBar.gif'>");
         $('#infoModal').modal({
             show: true
@@ -188,7 +188,7 @@ var Cartomancer = (function ($) {
         $('#btcut3').prop('disabled', true);
         $('#btlayout').removeClass('hidden');
         $('#btlayout').prop('disabled', false);
-        $("#pridikshuhn").css("visibility", "hidden");
+        $("#myModalLabel").css("visibility", "hidden");
         $(".modal-body").html("<img src='img/loadingBar.gif'>");
         $('#infoModal').modal({
             show: true
@@ -216,7 +216,7 @@ var Cartomancer = (function ($) {
     };
 
     var layThemOut = function () {
-        $("#pridikshuhn").css("visibility", "visible");
+        $("#myModalLabel").css("visibility", "visible");
         var teybuhl = fillTable();
         var risk = risk_of_imprisonment(teybuhl);
         var relative_meanings = fillRelativeMeanings(createTokens(teybuhl));
