@@ -1,4 +1,4 @@
-var Cartomancer = (function ($) {
+var cartomancer = (function () {
 
     var LANG = -1;
     var noprediction = "";
@@ -509,6 +509,6 @@ var Cartomancer = (function ($) {
         layThemOut: layThemOut
     };
 
-}(jQuery));
+}());
 
 

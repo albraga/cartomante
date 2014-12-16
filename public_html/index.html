@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Cartomancer</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/index.css" rel="stylesheet">
+        <link href="css/cartomancer.css" rel="stylesheet">
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -21,15 +21,15 @@
                     <a id="bt_en" href="index.html?setLng=en" class="btn btn-primary btn-lg active" role="button">&nbsp;&nbsp;&nbsp;English&nbsp;&nbsp;&nbsp;</a>
                 </div>
                 <div class="col-md-12">
-                    <button id="btshuffle" type="button" class="btn btn-default" onclick="Cartomancer.shuffle();">
+                    <button id="btshuffle" type="button" class="btn btn-default" onclick="cartomancer.shuffle();">
                         <img src="img/card-shuffle.gif" alt="card shuffle" class="top_img">
                         <br><span id="shuhfuhl" data-i18n="shuffle"></span>
                     </button>
-                    <button id="btcut3" type="button" class="btn btn-default" onclick="Cartomancer.cut3times();">
+                    <button id="btcut3" type="button" class="btn btn-default" onclick="cartomancer.cut3times();">
                         <img src="img/cut.jpg" alt="cut" class="top_img">
                         <br><span id="kuht" data-i18n="cut"></span>
                     </button>
-                    <button id="btlayout" type="button" class="btn btn-default" onclick="Cartomancer.layThemOut();">
+                    <button id="btlayout" type="button" class="btn btn-default" onclick="cartomancer.layThemOut();">
                         <img src="img/layout.png" alt="lay out" class="top_img">
                         <br><span id="skater" data-i18n="scatter"></span>
                     </button>
@@ -173,9 +173,9 @@
             </div>
         </div>
 
-        <script src="js/jquery-1.11.1.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/i18next-1.7.4.min.js"></script>
-        <script src="js/index.js"></script>
+        <script src="js/libs/jquery-1.11.1.min.js"></script>
+        <script src="js/libs/bootstrap.min.js"></script>
+        <script src="js/libs/i18next-1.7.4.min.js"></script>
+        <script src="js/cartomancer.js"></script>
     </body>
 </html>
