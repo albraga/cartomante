@@ -1,4 +1,6 @@
-cartomancer_data = (function() {
+var cartomancer = {};
+
+cartomancer.data = (function() {
     function Card(id, name, suit, value, individual_meaning, img) {
         this.id = id;
         this.name = name;
