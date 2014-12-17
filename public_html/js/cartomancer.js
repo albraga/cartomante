@@ -1,4 +1,6 @@
-var cartomancer = (function () {
+var cartomancer = {};
+
+(function () {
 
     var LANG = -1;
     var noprediction = "";
@@ -386,13 +388,10 @@ var cartomancer = (function () {
     };
 
     $('#btcut3, #btlayout').prop('disabled', true);
+    $('#btshuffle').click(shuffle);
+    $('#btcut3').click(cut3times);
+    $('#btlayout').click(layThemOut);
 
-    return {
-        shuffle: shuffle,
-        cut3times: cut3times,
-        layThemOut: layThemOut
-    };
-
-}());
+}(cartomancer));
 
 
