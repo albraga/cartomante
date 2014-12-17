@@ -3,7 +3,6 @@ var cartomancer = (function () {
     var LANG = -1;
     var noprediction = "";
     var deck = cartomancer_data.deck;
-    var variavel;
 
     i18n.init({fallbackLng: false}, function () {
         $("#shuhfuhl").i18n();
