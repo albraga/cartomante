@@ -1,6 +1,6 @@
 var cartomancer = {};
 
-cartomancer.data = (function() {
+cartomancer.data = (function () {
     function Card(id, name, suit, value, individual_meaning, img) {
         this.id = id;
         this.name = name;
@@ -9,7 +9,7 @@ cartomancer.data = (function() {
         this.individual_meaning = individual_meaning;
         this.img = img;
     }
-    
+
     var aceClubs = new Card(1, 'ace', 'Clubs', 1, ['Wealth, happiness and peace of mind.', 'Riqueza, felicidade e paz de espírito.'], 'img/Playing_card_club_A.svg');
     var kingClubs = new Card(2, 'king', 'Clubs', 1, ['A dark man, upright, faithful and affectionate in disposition.', 'Um homem misterioso, justo, fiel e carinhoso.'], 'img/Playing_card_club_K.svg');
     var queenClubs = new Card(3, 'queen', 'Clubs', 1, ['A dark woman, gentle and pleasing.', 'Uma mulher misteriosa, suave e agradável.'], 'img/Playing_card_club_Q.svg');
@@ -118,10 +118,62 @@ cartomancer.data = (function() {
         twoSpades
     ];
     
+    function Word(token, relative_meaning) {
+        this.token = token;
+        this.relative_meaning = relative_meaning;
+    }
+
+    var ace4 = new Word('aceaceaceace', ['Announces danger, failure in business and sometimes imprisonment.', 'Anuncia perigo, fracasso nos negócios e, por vezes, a prisão.']);
+    var ace3 = new Word('aceaceace', ['Signify good tidings.', 'Significa boas notícias.']);
+    var ace2 = new Word('aceace', ['A plot.', 'Uma conspiração.']);
+    var king4 = new Word('kingkingkingking', ['A consultation on important business, the result of which will be highly satisfactory.', 'Uma consulta sobre assuntos importantes, cujo resultado será altamente satisfatório.']);
+    var king2 = new Word('kingking', ['A partnership in business. Sometimes this only denotes friendly projects.', 'Uma parceria em negócios. Às vezes isto só denota projetos amigáveis.']);
+    var queen4 = new Word('queenqueenqueenqueen', ['Company, society.', 'Companhia, sociedade.']);
+    var queen3 = new Word('queenqueenqueen', ['Friendly calls.', 'Chamadas amigáveis.']);
+    var queen2 = new Word('queenqueen', ['A meeting between friends.', 'Um encontro entre amigos.']);
+    var jack4 = new Word('jackjackjackjack', ['A noisy party, mostly young people.', 'Uma festa barulhenta, principalmente jovens.']);
+    var jack3 = new Word('jackjackjack', ['False friends.', 'Falsos amigos.']);
+    var jack2 = new Word('jackjack', ['Evil intentions.', 'Más intenções.']);
+    var ten4 = new Word('tentententen', ['Great success in projected enterprises.', 'Grande sucesso em empreendimentos planejados.']);
+    var ten3 = new Word('tententen', ['Improper conduct.', 'Conduta imprópria.']);
+    var ten2 = new Word('tenten', ['Change of trade or profession.', 'Mudança de ofício ou profissão.']);
+    var nine4 = new Word('ninenineninenine', ['A great surprise.', 'Uma grande surpresa.']);
+    var nine3 = new Word('nineninenine', ['Joy, fortune, health.', 'Alegria, fortuna, saúde.']);
+    var nine2 = new Word('ninenine', ['A little gain.', 'Um pequeno ganho.']);
+    var eight4 = new Word('eighteighteighteight', ['A short journey.', 'Uma curta viagem.']);
+    var eight3 = new Word('eighteighteight', ['Thoughts of marriage.', 'Pensamentos de casamento.']);
+    var eight2 = new Word('eighteight', ['A brief love-dream.', 'Um breve sonho de amor.']);
+    var seven4 = new Word('sevensevensevenseven', ['Intrigues among servants or low people, threats, snares and disputes.', 'Intrigas entre funcionários ou pessoas de baixo escalão, ameaças, armadilhas e disputas.']);
+    var seven3 = new Word('sevensevenseven', ['Sickness, premature old age.', 'Doença, velhice prematura.']);
+    var seven2 = new Word('sevenseven', ['Levity.', 'Leviandade.']);
+
     return {
-        deck: deck
+        deck: deck,
+        ace4: ace4,
+        ace3: ace3,
+        ace2: ace2,
+        king4: king4,
+        king2: king2,
+        queen4: queen4,
+        queen3: queen3,
+        queen2: queen2,
+        jack4: jack4,
+        jack3: jack3,
+        jack2: jack2,
+        ten4: ten4,
+        ten3: ten3,
+        ten2: ten2,
+        nine4: nine4,
+        nine3: nine3,
+        nine2: nine2,
+        eight4: eight4,
+        eight3: eight3,
+        eight2: eight2,
+        seven4: seven4,
+        seven3: seven3,
+        seven2: seven2
     };
-    
+
 }());
 
 
