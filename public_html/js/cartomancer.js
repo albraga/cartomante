@@ -1,20 +1,6 @@
-
-
 (function () {
 
-    var LANG = -1;
-    var noprediction = "";
     var deck = cartomancer.data.deck;
-
-    i18n.init({fallbackLng: false}, function () {
-        $("#shuhfuhl").i18n();
-        $("#kuht").i18n();
-        $("#skater").i18n();
-        $(".pridikshuhn").i18n();
-        noprediction = $.t("noprediction");
-        LANG = $.t("langgwij");
-        riskof = $.t("riskof");
-    });
 
     function Word(token, relative_meaning) {
         this.token = token;
