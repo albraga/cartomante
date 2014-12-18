@@ -13,7 +13,7 @@
         $('#btshuffle').prop('disabled', true);
         $('#btcut3').prop('disabled', false);
         $("#myModalLabel").css("visibility", "hidden");
-        $(".modal-body").html("<img src='img/loadingBar.gif'>");
+        $(".modal-body").html("<img src='img/build/loadingBar.gif'>");
         $('#infoModal').modal({
             show: true
         });
@@ -32,7 +32,7 @@
         $('#btlayout').removeClass('hidden');
         $('#btlayout').prop('disabled', false);
         $("#myModalLabel").css("visibility", "hidden");
-        $(".modal-body").html("<img src='img/loadingBar.gif'>");
+        $(".modal-body").html("<img src='img/build/loadingBar.gif'>");
         $('#infoModal').modal({
             show: true
         });
