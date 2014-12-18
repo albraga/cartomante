@@ -4,8 +4,11 @@ module.exports = function(grunt) {
         concat: {
             dist: {
                 src: [
-                    'js/libs/*.js',
-                    'js/*.js'
+                    'js/libs/i18next-1.7.4.min.js',
+                    'js/libs/bootstrap.min.js',
+                    'js/cartomancer.i18n.js',
+                    'js/cartomancer.data.js',
+                    'js/cartomancer.js'
                 ],
                 dest: 'js/build/production.js'
             }
