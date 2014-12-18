@@ -295,7 +295,7 @@ cartomancer.data = (function () {
         for (var i = 0; i < 6; i++) {
             for (var j = 0; j < teybuhl[i].length; j++) {
                 var img = document.createElement("img");
-                img.src = "img/build" + teybuhl[i][j].img;
+                img.src = "img/build/" + teybuhl[i][j].img;
                 img.width = 50;
                 img.height = 62.5;
                 img.setAttribute('class', 'rm-img');
