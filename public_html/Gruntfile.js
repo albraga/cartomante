@@ -29,12 +29,26 @@ module.exports = function(grunt) {
                         dest: 'img/build'
                 }]
             }
+        },
+        cssmin: {
+            my_target: {
+                files: [{
+                        expand: true,
+                        cwd: 'css/',
+                        src: ['*.css', '!*.min.css'],
+                        dest: 'css/',
+                        ext: '.min.css'
+                }]
+            }
         }
+        
     });
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
-    grunt.registerTask('default', ['concat', 'uglify','imagemin']);
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.registerTask('default', ['concat', 'uglify','imagemin','cssmin']);
+    
 };
 
 
