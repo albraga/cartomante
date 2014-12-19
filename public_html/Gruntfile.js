@@ -33,7 +33,7 @@ module.exports = function(grunt) {
         cssmin: {
             combine: {
                 files: {
-                    'css/output.css': ['css/bootstrap.min.css','cartomancer.css']
+                    'css/output.css': ['css/bootstrap.min.css','css/cartomancer.css']
                 }
             },
             my_target: {
@@ -48,12 +48,12 @@ module.exports = function(grunt) {
         }
         
     });
-//    grunt.loadNpmTasks('grunt-contrib-concat');
-//    grunt.loadNpmTasks('grunt-contrib-uglify');
-//    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-//    grunt.registerTask('default', ['concat', 'uglify','imagemin','cssmin']);
-    grunt.registerTask('default', ['cssmin']);
+    grunt.registerTask('default', ['concat', 'uglify','imagemin','cssmin']);
+
 };
 
 
