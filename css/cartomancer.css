@@ -1,0 +1,32 @@
+body {
+    background-color: crimson;
+}
+
+.top_img {
+    width: 50%;
+    height: 50%;
+}
+
+span.glyphicon-eye-open, span.glyphicon-remove {
+    font-size: 2em;
+}
+
+#shuhfuhl, #kuht, #skater, .pridikshuhn {
+    font-size: 1em;
+}
+
+.modal-body {
+    font-size: 2em;
+}
+
+.btinfo-hidden {
+    
+}
+
+.bawrder {
+    border: 1px dashed white;
+}
+
+.col-md-12, .col-md-11 {
+    padding: 5px;
+}
