@@ -1,0 +1,284 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    |         
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    |         
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    |         
+    meta(name='description', content='Cartomancia Virtual Grátis')
+    |         
+    meta(name='keywords', content='baralho da sorte, baralho do amor, carta cigana gratis, carta ciganas gratis, carta omante, cartas cigana gratis, cartas ciganas, cartas ciganas gratis, cartas cigano, cartas cigano gratis, cartas ciganos gratis, cartas da cigana, cartas da sorte, cartas de cigana, cartas de cigana gratis, cartas de cigano, cartas gratis, cartas on line, cartas tarot, cartas tarot cigano, cartas tarot cigano gratis, cartas tarot grátis, cartomancia, cartomante, cigana gratis, cigana tarot, cigano tarot, consulta esoterica, curso de cartomancia, esoterico gratis, esoterismo, esoterismo gratis, esoterismo gratuito, joga cartas de tarot gratis, jogar cartas, jogar cartas gratis, jogo cartas gratis, jogo cartas online, jogo cartas tarot, jogo de cartas, jogo de cartas de tarot, jogo de cartas de tarot gratis, jogo de cartas de tarot online gratis, jogo de cartas e taro, jogo de cartas gratis online, jogo de cartas gratis tarot, jogo de cartas online gratis, jogo gratis de cartas, jogo online de cartas, jogos de cartas, jogos de cartas gratis, previsão do futuro gratis, previsão do futuro online gratis, significado cartas tarot, ver cartas ciganas gratis, videncia, videncia on line, videncias, videncias gratuitas')
+    |         
+    title Cartomante Virtual
+    |         
+    link(href='./css/output.min.css', rel='stylesheet')
+    |         
+    link(rel='shortcut icon', href='./favicon.ico', type='image/x-icon')
+    |         
+    link(rel='icon', href='./favicon.ico', type='image/x-icon')
+    |         
+    |         
+    style.
+      .btn{
+      text-shadow:0 0 13px rgba(0,0,0,.3);
+      border:1px solid #bfbfbf;
+      border-radius:5px;
+      box-shadow:0 4px 0 #a5a5a5,0 5px 0 #565656,0 5px 10px rgba(0,0,0,.4);
+      background-color:#f2f2f2
+      }
+      .btn:hover{
+      text-shadow:0 0 13px #fff;
+      margin-top:-2px;
+      background-color:#efefef;
+      top:-2px;
+      box-shadow:0 7px 0 #a5a5a5,0 7px 0 #565656,0 7px 7px rgba(0,0,0,.4)
+      }
+      .btn:active{
+      margin-top:2px;
+      background-color:#efefef;
+      top:2px;
+      box-shadow:0 2px 0 #a5a5a5,0 2px 0 #565656,0 2px 5px rgba(0,0,0,.4)
+      }
+  |     
+  body
+    .container-fluid
+      .row
+        .col-md-7
+        |                 
+        .col-md-5
+          a.btn.btn-primary.btn-lg.active(href='cartomancia', role='button') Aprenda Cartomancia
+          |                     
+          a#bt_pt.btn.btn-primary.btn-lg.active(href='index.html?setLng=pt', role='button') Portugu&ecirc;s
+          |                     
+          a#bt_en.btn.btn-primary.btn-lg.active(href='index.html?setLng=en', role='button') &nbsp;&nbsp;&nbsp;English&nbsp;&nbsp;&nbsp;
+      |             
+      .row
+        .col-md-1
+        |                 
+        .col-md-11
+          button#btshuffle.btn.btn-default(type='button')
+            img.top_img(src='./img/build/card-shuffle.png', alt='card shuffle')
+            |                         
+            br
+            span#shuhfuhl(data-i18n='shuffle')
+          |                     
+          button#btcut3.btn.btn-default(type='button')
+            img.top_img(src='./img/build/cut.png', alt='cut')
+            |                         
+            br
+            span#kuht(data-i18n='cut')
+          |                     
+          button#btlayout.btn.btn-default(type='button')
+            img.top_img(src='./img/build/layout.png', alt='lay out')
+            |                         
+            br
+            span#skater(data-i18n='scatter')
+    |         
+    #board.container.hidden
+      .row.bawrder
+        .col-md-12.text-center
+          button#btinfo1.btn.btn-default.btn-lg.btinfo-hidden(type='button', data-toggle='modal', data-target='#infoModal')
+            span.glyphicon.glyphicon-eye-open
+            br
+            span.pridikshuhn(data-i18n='prediction')
+          |        
+          |                     
+          a#card1(href='cartomancia')
+          |                     
+          a#card2(href='cartomancia')
+          |                     
+          a#card3(href='cartomancia')
+          |                     
+          a#card4(href='cartomancia')
+          |                     
+          a#card5(href='cartomancia')
+          |                     
+          a#card6(href='cartomancia')
+          |                     
+          a#card7(href='cartomancia')
+          |                     
+          a#card8(href='cartomancia')
+          |                     
+          a#card9(href='cartomancia')
+          |                     
+          button#btrisk1.btn.btn-default.btn-lg.btinfo-hidden(type='button', data-toggle='modal', data-target='#infoModal')
+            span.glyphicon.glyphicon-eye-open
+            br
+            span.pridikshuhn(data-i18n='prediction')
+      |             
+      .row.bawrder
+        .col-md-12.text-center
+          button#btinfo2.btn.btn-default.btn-lg.btinfo-hidden(type='button', data-toggle='modal', data-target='#infoModal')
+            span.glyphicon.glyphicon-eye-open
+            br
+            span.pridikshuhn(data-i18n='prediction')
+          |                     
+          a#card10(href='cartomancia')
+          |                     
+          a#card11(href='cartomancia')
+          |                     
+          a#card12(href='cartomancia')
+          |                     
+          a#card13(href='cartomancia')
+          |                     
+          a#card14(href='cartomancia')
+          |                     
+          a#card15(href='cartomancia')
+          |                     
+          a#card16(href='cartomancia')
+          |                     
+          a#card17(href='cartomancia')
+          |                     
+          a#card18(href='cartomancia')
+          |                     
+          button#btrisk2.btn.btn-default.btn-lg.btinfo-hidden(type='button', data-toggle='modal', data-target='#infoModal')
+            span.glyphicon.glyphicon-eye-open
+            br
+            span.pridikshuhn(data-i18n='prediction')
+      |             
+      .row.bawrder
+        .col-md-12.text-center
+          button#btinfo3.btn.btn-default.btn-lg.btinfo-hidden(type='button', data-toggle='modal', data-target='#infoModal')
+            span.glyphicon.glyphicon-eye-open
+            br
+            span.pridikshuhn(data-i18n='prediction')
+          |                     
+          a#card19(href='cartomancia')
+          |                     
+          a#card20(href='cartomancia')
+          |                     
+          a#card21(href='cartomancia')
+          |                     
+          a#card22(href='cartomancia')
+          |                     
+          a#card23(href='cartomancia')
+          |                     
+          a#card24(href='cartomancia')
+          |                     
+          a#card25(href='cartomancia')
+          |                     
+          a#card26(href='cartomancia')
+          |                     
+          a#card27(href='cartomancia')
+          |                     
+          button#btrisk3.btn.btn-default.btn-lg.btinfo-hidden(type='button', data-toggle='modal', data-target='#infoModal')
+            span.glyphicon.glyphicon-eye-open
+            br
+            span.pridikshuhn(data-i18n='prediction')
+      |             
+      .row.bawrder
+        .col-md-12.text-center
+          button#btinfo4.btn.btn-default.btn-lg.btinfo-hidden(type='button', data-toggle='modal', data-target='#infoModal')
+            span.glyphicon.glyphicon-eye-open
+            br
+            span.pridikshuhn(data-i18n='prediction')
+          |                     
+          a#card28(href='cartomancia')
+          |                     
+          a#card29(href='cartomancia')
+          |                     
+          a#card30(href='cartomancia')
+          |                     
+          a#card31(href='cartomancia')
+          |                     
+          a#card32(href='cartomancia')
+          |                     
+          a#card33(href='cartomancia')
+          |                     
+          a#card34(href='cartomancia')
+          |                     
+          a#card35(href='cartomancia')
+          |                     
+          a#card36(href='cartomancia')
+          |                     
+          button#btrisk4.btn.btn-default.btn-lg.btinfo-hidden(type='button', data-toggle='modal', data-target='#infoModal')
+            span.glyphicon.glyphicon-eye-open
+            br
+            span.pridikshuhn(data-i18n='prediction')
+      |             
+      .row.bawrder
+        .col-md-12.text-center
+          button#btinfo5.btn.btn-default.btn-lg.btinfo-hidden(type='button', data-toggle='modal', data-target='#infoModal')
+            span.glyphicon.glyphicon-eye-open
+            br
+            span.pridikshuhn(data-i18n='prediction')
+          |                     
+          a#card37(href='cartomancia')
+          |                     
+          a#card38(href='cartomancia')
+          |                     
+          a#card39(href='cartomancia')
+          |                     
+          a#card40(href='cartomancia')
+          |                     
+          a#card41(href='cartomancia')
+          |                     
+          a#card42(href='cartomancia')
+          |                     
+          a#card43(href='cartomancia')
+          |                     
+          a#card44(href='cartomancia')
+          |                     
+          a#card45(href='cartomancia')
+          |                     
+          button#btrisk5.btn.btn-default.btn-lg.btinfo-hidden(type='button', data-toggle='modal', data-target='#infoModal')
+            span.glyphicon.glyphicon-eye-open
+            br
+            span.pridikshuhn(data-i18n='prediction')
+      |             
+      .row.bawrder
+        .col-md-11.text-center
+          button#btinfo6.btn.btn-default.btn-lg.btinfo-hidden(type='button', data-toggle='modal', data-target='#infoModal')
+            span.glyphicon.glyphicon-eye-open
+            br
+            span.pridikshuhn(data-i18n='prediction')
+          |                     
+          a#card46(href='cartomancia')
+          |                     
+          a#card47(href='cartomancia')
+          |                     
+          a#card48(href='cartomancia')
+          |                     
+          a#card49(href='cartomancia')
+          |                     
+          a#card50(href='cartomancia')
+          |                     
+          a#card51(href='cartomancia')
+          |                     
+          a#card52(href='cartomancia')
+          |                     
+          button#btrisk6.btn.btn-default.btn-lg.btinfo-hidden(type='button', data-toggle='modal', data-target='#infoModal')
+            span.glyphicon.glyphicon-eye-open
+            br
+            span.pridikshuhn(data-i18n='prediction')
+      |             
+      .row
+        .col-lg-6
+          .copyright
+            p
+              span &copy; 2015. Desenvolvido por 
+              a(href='https://albraga.github.io/', target='_blank') Alexandre Braga
+    |         
+    #infoModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal')
+              span(aria-hidden='true') &times;
+              span.sr-only Close
+            |                         
+            h4#myModalLabel.modal-title
+              span.glyphicon.glyphicon-eye-open
+              | &nbsp;&nbsp;&nbsp;
+              span.pridikshuhn(data-i18n='prediction')
+          |                     
+          .modal-body
+            span#nohpridikshuhn.hidden(data-i18n='noprediction')
+          |                     
+          .modal-footer
+            button.btn.btn-default(type='button', data-dismiss='modal')
+              span.glyphicon.glyphicon-remove
+    |         
+    script(src='./js/build/production.min.js')

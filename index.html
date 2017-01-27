@@ -1,234 +1,114 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Cartomancia Virtual Grátis">
-        <meta name="keywords" content="baralho da sorte, baralho do amor, carta cigana gratis, carta ciganas gratis, carta omante, cartas cigana gratis, cartas ciganas, cartas ciganas gratis, cartas cigano, cartas cigano gratis, cartas ciganos gratis, cartas da cigana, cartas da sorte, cartas de cigana, cartas de cigana gratis, cartas de cigano, cartas gratis, cartas on line, cartas tarot, cartas tarot cigano, cartas tarot cigano gratis, cartas tarot grátis, cartomancia, cartomante, cigana gratis, cigana tarot, cigano tarot, consulta esoterica, curso de cartomancia, esoterico gratis, esoterismo, esoterismo gratis, esoterismo gratuito, joga cartas de tarot gratis, jogar cartas, jogar cartas gratis, jogo cartas gratis, jogo cartas online, jogo cartas tarot, jogo de cartas, jogo de cartas de tarot, jogo de cartas de tarot gratis, jogo de cartas de tarot online gratis, jogo de cartas e taro, jogo de cartas gratis online, jogo de cartas gratis tarot, jogo de cartas online gratis, jogo gratis de cartas, jogo online de cartas, jogos de cartas, jogos de cartas gratis, previsão do futuro gratis, previsão do futuro online gratis, significado cartas tarot, ver cartas ciganas gratis, videncia, videncia on line, videncias, videncias gratuitas">
-        <title>Cartomante Virtual</title>
-        <!--        <link href="css/bootstrap.min.css" rel="stylesheet">
-                <link href="css/cartomancer.css" rel="stylesheet">-->
-        <link href="css/output.min.css" rel="stylesheet">
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="/favicon.ico" type="image/x-icon">
-        
-        <style>
-            .btn{
-                text-shadow:0 0 13px rgba(0,0,0,.3);
-                border:1px solid #bfbfbf;
-                border-radius:5px;
-                box-shadow:0 4px 0 #a5a5a5,0 5px 0 #565656,0 5px 10px rgba(0,0,0,.4);
-                background-color:#f2f2f2
-            }
-            .btn:hover{
-                text-shadow:0 0 13px #fff;
-                margin-top:-2px;
-                background-color:#efefef;
-                top:-2px;
-                box-shadow:0 7px 0 #a5a5a5,0 7px 0 #565656,0 7px 7px rgba(0,0,0,.4)
-            }
-            .btn:active{
-                margin-top:2px;
-                background-color:#efefef;
-                top:2px;
-                box-shadow:0 2px 0 #a5a5a5,0 2px 0 #565656,0 2px 5px rgba(0,0,0,.4)
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-7">
-                    <!--                    <a class="navbar-brand" href="cartomancia">
-                                            <img alt="Cartomante" src="img/logo.png" width="90" height="107">
-                                        </a>-->
-                </div>
-                <div class="col-md-5">
-                    <a href="cartomancia" class="btn btn-primary btn-lg active" role="button">Aprenda Cartomancia</a>
-                    <a id="bt_pt" href="index.html?setLng=pt" class="btn btn-primary btn-lg active" role="button">Português</a>
-                    <a id="bt_en" href="index.html?setLng=en" class="btn btn-primary btn-lg active" role="button">&nbsp;&nbsp;&nbsp;English&nbsp;&nbsp;&nbsp;</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-11">
-                    <button id="btshuffle" type="button" class="btn btn-default">
-                        <img src="img/build/card-shuffle.png" alt="card shuffle" class="top_img">
-                        <br><span id="shuhfuhl" data-i18n="shuffle"></span>
-                    </button>
-                    <button id="btcut3" type="button" class="btn btn-default">
-                        <img src="img/build/cut.png" alt="cut" class="top_img">
-                        <br><span id="kuht" data-i18n="cut"></span>
-                    </button>
-                    <button id="btlayout" type="button" class="btn btn-default">
-                        <img src="img/build/layout.png" alt="lay out" class="top_img">
-                        <br><span id="skater" data-i18n="scatter"></span>
-                    </button>
-                </div>
-
-            </div>
+  <head>
+    <meta charset="utf-8">        
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">        
+    <meta name="viewport" content="width=device-width, initial-scale=1">        
+    <meta name="description" content="Cartomancia Virtual Grátis">        
+    <meta name="keywords" content="baralho da sorte, baralho do amor, carta cigana gratis, carta ciganas gratis, carta omante, cartas cigana gratis, cartas ciganas, cartas ciganas gratis, cartas cigano, cartas cigano gratis, cartas ciganos gratis, cartas da cigana, cartas da sorte, cartas de cigana, cartas de cigana gratis, cartas de cigano, cartas gratis, cartas on line, cartas tarot, cartas tarot cigano, cartas tarot cigano gratis, cartas tarot grátis, cartomancia, cartomante, cigana gratis, cigana tarot, cigano tarot, consulta esoterica, curso de cartomancia, esoterico gratis, esoterismo, esoterismo gratis, esoterismo gratuito, joga cartas de tarot gratis, jogar cartas, jogar cartas gratis, jogo cartas gratis, jogo cartas online, jogo cartas tarot, jogo de cartas, jogo de cartas de tarot, jogo de cartas de tarot gratis, jogo de cartas de tarot online gratis, jogo de cartas e taro, jogo de cartas gratis online, jogo de cartas gratis tarot, jogo de cartas online gratis, jogo gratis de cartas, jogo online de cartas, jogos de cartas, jogos de cartas gratis, previsão do futuro gratis, previsão do futuro online gratis, significado cartas tarot, ver cartas ciganas gratis, videncia, videncia on line, videncias, videncias gratuitas">        
+    <title>Cartomante Virtual</title>        
+    <link href="./css/output.min.css" rel="stylesheet">        
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">        
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">        
+            
+    <style>
+      .btn{
+      text-shadow:0 0 13px rgba(0,0,0,.3);
+      border:1px solid #bfbfbf;
+      border-radius:5px;
+      box-shadow:0 4px 0 #a5a5a5,0 5px 0 #565656,0 5px 10px rgba(0,0,0,.4);
+      background-color:#f2f2f2
+      }
+      .btn:hover{
+      text-shadow:0 0 13px #fff;
+      margin-top:-2px;
+      background-color:#efefef;
+      top:-2px;
+      box-shadow:0 7px 0 #a5a5a5,0 7px 0 #565656,0 7px 7px rgba(0,0,0,.4)
+      }
+      .btn:active{
+      margin-top:2px;
+      background-color:#efefef;
+      top:2px;
+      box-shadow:0 2px 0 #a5a5a5,0 2px 0 #565656,0 2px 5px rgba(0,0,0,.4)
+      }
+    </style>
+  </head>    
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-7"></div>                
+        <div class="col-md-5"><a href="cartomancia" role="button" class="btn btn-primary btn-lg active">Aprenda Cartomancia</a>                    <a id="bt_pt" href="index.html?setLng=pt" role="button" class="btn btn-primary btn-lg active">Portugu&ecirc;s</a>                    <a id="bt_en" href="index.html?setLng=en" role="button" class="btn btn-primary btn-lg active">&nbsp;&nbsp;&nbsp;English&nbsp;&nbsp;&nbsp;</a></div>
+      </div>            
+      <div class="row">
+        <div class="col-md-1"></div>                
+        <div class="col-md-11">
+          <button id="btshuffle" type="button" class="btn btn-default"><img src="./img/build/card-shuffle.png" alt="card shuffle" class="top_img">                        <br><span id="shuhfuhl" data-i18n="shuffle"></span></button>                    
+          <button id="btcut3" type="button" class="btn btn-default"><img src="./img/build/cut.png" alt="cut" class="top_img">                        <br><span id="kuht" data-i18n="cut"></span></button>                    
+          <button id="btlayout" type="button" class="btn btn-default"><img src="./img/build/layout.png" alt="lay out" class="top_img">                        <br><span id="skater" data-i18n="scatter"></span></button>
         </div>
-        <div id="board" class="container hidden">
-            <div class="row bawrder">
-                <div class="col-md-12 text-center">
-                    <button id="btinfo1" type="button" class="btn btn-default btn-lg btinfo-hidden" data-toggle="modal" data-target="#infoModal">
-                        <span class="glyphicon glyphicon-eye-open"></span><br><span class="pridikshuhn" data-i18n="prediction"></span>
-                    </button>       
-                    <a id="card1" href="cartomancia"></a>
-                    <a id="card2" href="cartomancia"></a>
-                    <a id="card3" href="cartomancia"></a>
-                    <a id="card4" href="cartomancia"></a>
-                    <a id="card5" href="cartomancia"></a>
-                    <a id="card6" href="cartomancia"></a>
-                    <a id="card7" href="cartomancia"></a>
-                    <a id="card8" href="cartomancia"></a>
-                    <a id="card9" href="cartomancia"></a>
-                    <button id="btrisk1" type="button" class="btn btn-default btn-lg btinfo-hidden" data-toggle="modal" data-target="#infoModal">
-                        <span class="glyphicon glyphicon-eye-open"></span><br><span class="pridikshuhn" data-i18n="prediction"></span>
-                    </button>
-                </div>
-            </div>
-
-            <div class="row bawrder">
-                <div class="col-md-12 text-center">
-                    <button id="btinfo2" type="button" class="btn btn-default btn-lg btinfo-hidden" data-toggle="modal" data-target="#infoModal">
-                        <span class="glyphicon glyphicon-eye-open"></span><br><span class="pridikshuhn" data-i18n="prediction"></span>
-                    </button>
-                    <a id="card10" href="cartomancia"></a>
-                    <a id="card11" href="cartomancia"></a>
-                    <a id="card12" href="cartomancia"></a>
-                    <a id="card13" href="cartomancia"></a>
-                    <a id="card14" href="cartomancia"></a>
-                    <a id="card15" href="cartomancia"></a>
-                    <a id="card16" href="cartomancia"></a>
-                    <a id="card17" href="cartomancia"></a>
-                    <a id="card18" href="cartomancia"></a>
-                    <button id="btrisk2" type="button" class="btn btn-default btn-lg btinfo-hidden" data-toggle="modal" data-target="#infoModal">
-                        <span class="glyphicon glyphicon-eye-open"></span><br><span class="pridikshuhn" data-i18n="prediction"></span>
-                    </button>
-                </div>
-            </div>
-
-            <div class="row bawrder">
-                <div class="col-md-12 text-center">
-                    <button id="btinfo3" type="button" class="btn btn-default btn-lg btinfo-hidden" data-toggle="modal" data-target="#infoModal">
-                        <span class="glyphicon glyphicon-eye-open"></span><br><span class="pridikshuhn" data-i18n="prediction"></span>
-                    </button>
-                    <a id="card19" href="cartomancia"></a>
-                    <a id="card20" href="cartomancia"></a>
-                    <a id="card21" href="cartomancia"></a>
-                    <a id="card22" href="cartomancia"></a>
-                    <a id="card23" href="cartomancia"></a>
-                    <a id="card24" href="cartomancia"></a>
-                    <a id="card25" href="cartomancia"></a>
-                    <a id="card26" href="cartomancia"></a>
-                    <a id="card27" href="cartomancia"></a>
-                    <button id="btrisk3" type="button" class="btn btn-default btn-lg btinfo-hidden" data-toggle="modal" data-target="#infoModal">
-                        <span class="glyphicon glyphicon-eye-open"></span><br><span class="pridikshuhn" data-i18n="prediction"></span>
-                    </button>
-                </div>
-            </div>
-
-            <div class="row bawrder">
-                <div class="col-md-12 text-center">
-                    <button id="btinfo4" type="button" class="btn btn-default btn-lg btinfo-hidden" data-toggle="modal" data-target="#infoModal">
-                        <span class="glyphicon glyphicon-eye-open"></span><br><span class="pridikshuhn" data-i18n="prediction"></span>
-                    </button>
-                    <a id="card28" href="cartomancia"></a>
-                    <a id="card29" href="cartomancia"></a>
-                    <a id="card30" href="cartomancia"></a>
-                    <a id="card31" href="cartomancia"></a>
-                    <a id="card32" href="cartomancia"></a>
-                    <a id="card33" href="cartomancia"></a>
-                    <a id="card34" href="cartomancia"></a>
-                    <a id="card35" href="cartomancia"></a>
-                    <a id="card36" href="cartomancia"></a>
-                    <button id="btrisk4" type="button" class="btn btn-default btn-lg btinfo-hidden" data-toggle="modal" data-target="#infoModal">
-                        <span class="glyphicon glyphicon-eye-open"></span><br><span class="pridikshuhn" data-i18n="prediction"></span>
-                    </button>
-                </div>
-            </div>
-
-            <div class="row bawrder">
-                <div class="col-md-12 text-center">
-                    <button id="btinfo5" type="button" class="btn btn-default btn-lg btinfo-hidden" data-toggle="modal" data-target="#infoModal">
-                        <span class="glyphicon glyphicon-eye-open"></span><br><span class="pridikshuhn" data-i18n="prediction"></span>
-                    </button>
-                    <a id="card37" href="cartomancia"></a>
-                    <a id="card38" href="cartomancia"></a>
-                    <a id="card39" href="cartomancia"></a>
-                    <a id="card40" href="cartomancia"></a>
-                    <a id="card41" href="cartomancia"></a>
-                    <a id="card42" href="cartomancia"></a>
-                    <a id="card43" href="cartomancia"></a>
-                    <a id="card44" href="cartomancia"></a>
-                    <a id="card45" href="cartomancia"></a>
-                    <button id="btrisk5" type="button" class="btn btn-default btn-lg btinfo-hidden" data-toggle="modal" data-target="#infoModal">
-                        <span class="glyphicon glyphicon-eye-open"></span><br><span class="pridikshuhn" data-i18n="prediction"></span>
-                    </button>
-                </div>
-            </div>
-
-            <div class="row bawrder">
-                <div class="col-md-11 text-center">
-                    <button id="btinfo6" type="button" class="btn btn-default btn-lg btinfo-hidden" data-toggle="modal" data-target="#infoModal">
-                        <span class="glyphicon glyphicon-eye-open"></span><br><span class="pridikshuhn" data-i18n="prediction"></span>
-                    </button>
-                    <a id="card46" href="cartomancia"></a>
-                    <a id="card47" href="cartomancia"></a>
-                    <a id="card48" href="cartomancia"></a>
-                    <a id="card49" href="cartomancia"></a>
-                    <a id="card50" href="cartomancia"></a>
-                    <a id="card51" href="cartomancia"></a>
-                    <a id="card52" href="cartomancia"></a>
-                    <button id="btrisk6" type="button" class="btn btn-default btn-lg btinfo-hidden" data-toggle="modal" data-target="#infoModal">
-                        <span class="glyphicon glyphicon-eye-open"></span><br><span class="pridikshuhn" data-i18n="prediction"></span>
-                    </button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="copyright">
-                        <p>
-                            <span>&copy; 2015. Desenvolvido por </span><a href="http://brahgah.com" target="_blank">Alexandre Braga</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
+      </div>
+    </div>        
+    <div id="board" class="container hidden">
+      <div class="row bawrder">
+        <div class="col-md-12 text-center">
+          <button id="btinfo1" type="button" data-toggle="modal" data-target="#infoModal" class="btn btn-default btn-lg btinfo-hidden"><span class="glyphicon glyphicon-eye-open"></span><br><span data-i18n="prediction" class="pridikshuhn"></span></button>       
+                              <a id="card1" href="cartomancia"></a>                    <a id="card2" href="cartomancia"></a>                    <a id="card3" href="cartomancia"></a>                    <a id="card4" href="cartomancia"></a>                    <a id="card5" href="cartomancia"></a>                    <a id="card6" href="cartomancia"></a>                    <a id="card7" href="cartomancia"></a>                    <a id="card8" href="cartomancia"></a>                    <a id="card9" href="cartomancia"></a>                    
+          <button id="btrisk1" type="button" data-toggle="modal" data-target="#infoModal" class="btn btn-default btn-lg btinfo-hidden"><span class="glyphicon glyphicon-eye-open"></span><br><span data-i18n="prediction" class="pridikshuhn"></span></button>
         </div>
-
-        <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;&nbsp;<span class="pridikshuhn" data-i18n="prediction"></span></h4>
-                    </div>
-                    <div class="modal-body">
-                        <span id="nohpridikshuhn" data-i18n="noprediction" class="hidden"></span>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></button>
-                    </div>
-                </div>
-            </div>
+      </div>            
+      <div class="row bawrder">
+        <div class="col-md-12 text-center">
+          <button id="btinfo2" type="button" data-toggle="modal" data-target="#infoModal" class="btn btn-default btn-lg btinfo-hidden"><span class="glyphicon glyphicon-eye-open"></span><br><span data-i18n="prediction" class="pridikshuhn"></span></button>                    <a id="card10" href="cartomancia"></a>                    <a id="card11" href="cartomancia"></a>                    <a id="card12" href="cartomancia"></a>                    <a id="card13" href="cartomancia"></a>                    <a id="card14" href="cartomancia"></a>                    <a id="card15" href="cartomancia"></a>                    <a id="card16" href="cartomancia"></a>                    <a id="card17" href="cartomancia"></a>                    <a id="card18" href="cartomancia"></a>                    
+          <button id="btrisk2" type="button" data-toggle="modal" data-target="#infoModal" class="btn btn-default btn-lg btinfo-hidden"><span class="glyphicon glyphicon-eye-open"></span><br><span data-i18n="prediction" class="pridikshuhn"></span></button>
         </div>
-
-
-        <!--        <script src="js/libs/jquery-1.11.1.min.js"></script>
-                <script src="js/libs/bootstrap.min.js"></script>
-                <script src="js/libs/i18next-1.7.4.min.js"></script>
-                <script src="js/cartomancer.data.js"></script>
-                <script src="js/cartomancer.i18n.js"></script>
-                <script src="js/cartomancer.js"></script>-->
-
-        <script src="js/build/production.min.js"></script>
-
-    </body>
+      </div>            
+      <div class="row bawrder">
+        <div class="col-md-12 text-center">
+          <button id="btinfo3" type="button" data-toggle="modal" data-target="#infoModal" class="btn btn-default btn-lg btinfo-hidden"><span class="glyphicon glyphicon-eye-open"></span><br><span data-i18n="prediction" class="pridikshuhn"></span></button>                    <a id="card19" href="cartomancia"></a>                    <a id="card20" href="cartomancia"></a>                    <a id="card21" href="cartomancia"></a>                    <a id="card22" href="cartomancia"></a>                    <a id="card23" href="cartomancia"></a>                    <a id="card24" href="cartomancia"></a>                    <a id="card25" href="cartomancia"></a>                    <a id="card26" href="cartomancia"></a>                    <a id="card27" href="cartomancia"></a>                    
+          <button id="btrisk3" type="button" data-toggle="modal" data-target="#infoModal" class="btn btn-default btn-lg btinfo-hidden"><span class="glyphicon glyphicon-eye-open"></span><br><span data-i18n="prediction" class="pridikshuhn"></span></button>
+        </div>
+      </div>            
+      <div class="row bawrder">
+        <div class="col-md-12 text-center">
+          <button id="btinfo4" type="button" data-toggle="modal" data-target="#infoModal" class="btn btn-default btn-lg btinfo-hidden"><span class="glyphicon glyphicon-eye-open"></span><br><span data-i18n="prediction" class="pridikshuhn"></span></button>                    <a id="card28" href="cartomancia"></a>                    <a id="card29" href="cartomancia"></a>                    <a id="card30" href="cartomancia"></a>                    <a id="card31" href="cartomancia"></a>                    <a id="card32" href="cartomancia"></a>                    <a id="card33" href="cartomancia"></a>                    <a id="card34" href="cartomancia"></a>                    <a id="card35" href="cartomancia"></a>                    <a id="card36" href="cartomancia"></a>                    
+          <button id="btrisk4" type="button" data-toggle="modal" data-target="#infoModal" class="btn btn-default btn-lg btinfo-hidden"><span class="glyphicon glyphicon-eye-open"></span><br><span data-i18n="prediction" class="pridikshuhn"></span></button>
+        </div>
+      </div>            
+      <div class="row bawrder">
+        <div class="col-md-12 text-center">
+          <button id="btinfo5" type="button" data-toggle="modal" data-target="#infoModal" class="btn btn-default btn-lg btinfo-hidden"><span class="glyphicon glyphicon-eye-open"></span><br><span data-i18n="prediction" class="pridikshuhn"></span></button>                    <a id="card37" href="cartomancia"></a>                    <a id="card38" href="cartomancia"></a>                    <a id="card39" href="cartomancia"></a>                    <a id="card40" href="cartomancia"></a>                    <a id="card41" href="cartomancia"></a>                    <a id="card42" href="cartomancia"></a>                    <a id="card43" href="cartomancia"></a>                    <a id="card44" href="cartomancia"></a>                    <a id="card45" href="cartomancia"></a>                    
+          <button id="btrisk5" type="button" data-toggle="modal" data-target="#infoModal" class="btn btn-default btn-lg btinfo-hidden"><span class="glyphicon glyphicon-eye-open"></span><br><span data-i18n="prediction" class="pridikshuhn"></span></button>
+        </div>
+      </div>            
+      <div class="row bawrder">
+        <div class="col-md-11 text-center">
+          <button id="btinfo6" type="button" data-toggle="modal" data-target="#infoModal" class="btn btn-default btn-lg btinfo-hidden"><span class="glyphicon glyphicon-eye-open"></span><br><span data-i18n="prediction" class="pridikshuhn"></span></button>                    <a id="card46" href="cartomancia"></a>                    <a id="card47" href="cartomancia"></a>                    <a id="card48" href="cartomancia"></a>                    <a id="card49" href="cartomancia"></a>                    <a id="card50" href="cartomancia"></a>                    <a id="card51" href="cartomancia"></a>                    <a id="card52" href="cartomancia"></a>                    
+          <button id="btrisk6" type="button" data-toggle="modal" data-target="#infoModal" class="btn btn-default btn-lg btinfo-hidden"><span class="glyphicon glyphicon-eye-open"></span><br><span data-i18n="prediction" class="pridikshuhn"></span></button>
+        </div>
+      </div>            
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="copyright">
+            <p><span>&copy; 2015. Desenvolvido por </span><a href="https://albraga.github.io/" target="_blank">Alexandre Braga</a></p>
+          </div>
+        </div>
+      </div>
+    </div>        
+    <div id="infoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>                        
+            <h4 id="myModalLabel" class="modal-title"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;&nbsp;<span data-i18n="prediction" class="pridikshuhn"></span></h4>
+          </div>                    
+          <div class="modal-body"><span id="nohpridikshuhn" data-i18n="noprediction" class="hidden"></span></div>                    
+          <div class="modal-footer">
+            <button type="button" data-dismiss="modal" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button>
+          </div>
+        </div>
+      </div>
+    </div>        
+    <script src="./js/build/production.min.js"></script>
+  </body>
 </html>
